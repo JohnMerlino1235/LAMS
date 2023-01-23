@@ -1,6 +1,23 @@
 import React, { useState } from 'react';
+import { useFormik } from "formik";
+import lamb from './Lamb.png'
 
 const SignUpPage = () => {
+    const mystyle = {
+        color: "black",
+        padding: "10px",
+        textAlign: "center",
+      };
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        onSubmit: values => {
+            console.log({ values });
+        },
+    });
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -46,19 +63,37 @@ const SignUpPage = () => {
   };
 
   return (
+    <form style={mystyle} onSubmit={formik.handleSubmit}>
+        <div>
+            <img
+                src={lamb}
+                alt="LAMB"
+                style={{
+                    width: "100px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    marginTop: "0"
+                }}
+            />
+        </div>
     <div>
+        <div style={mystyle}>
+                <h1>LAMS</h1>
+                <p>Leg Activity Monitoring System</p>
+                <p>Sign-Up Page:</p>
+            </div>
       <form>
-        <label>
-          Email:
+        <div>
+          Email: 
           <input
             type="email"
             value={email}
             onChange={handleEmailChange}
             required
           />
-        </label>
+        </div>
         <br />
-        <label>
+        <div>
           Password:
           <input
             type="password"
@@ -66,9 +101,9 @@ const SignUpPage = () => {
             onChange={handlePasswordChange}
             required
           />
-        </label>
+        </div>
         <br />
-        <label>
+        <div>
           First Name:
           <input
             type="text"
@@ -76,9 +111,9 @@ const SignUpPage = () => {
             onChange={handleFirstNameChange}
             required
           />
-        </label>
+        </div>
         <br />
-        <label>
+        <div>
           Last Name:
           <input
             type="text"
@@ -86,9 +121,9 @@ const SignUpPage = () => {
             onChange={handleLastNameChange}
             required
           />
-        </label>
+        </div>
         <br />
-        <label>
+        <div>
           Height:
           <input
             type="number"
@@ -96,9 +131,9 @@ const SignUpPage = () => {
             onChange={handleHeightChange}
             required
           />
-        </label>
+        </div>
         <br />
-        <label>
+        <div>
           Weight:
           <input
             type="number"
@@ -106,12 +141,13 @@ const SignUpPage = () => {
             onChange={handleWeightChange}
             required
           />
-        </label>
+        </div>
         <br />
         <button onClick={handleSignUp}>Sign Up</button>
         <button onClick={handleCancel}>Cancel</button>
       </form>
     </div>
+    </form>
   );
 };
 
