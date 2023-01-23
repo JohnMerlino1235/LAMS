@@ -1,11 +1,11 @@
 # Getting Started with the LAMBS Front-End Repository
 
-## Cloning the Repository
+# Cloning the Repository
 
 Open a new instance of terminal and navigate directory where you want to store the repository. Run the following:
 ### `git clone https://github.com/JohnMerlino1235/LAMS.git`
 
-# Working on a new ticket
+# Working on a new ticket - Developer Runbook
 
 We will be assigning tickets for each new feature that we will develop. To work on an assigned ticket from our project found [here]https://lams-eece.atlassian.net/jira/software/c/projects/LAM/boards/2, please do the following:
 
