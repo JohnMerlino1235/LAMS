@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { useFormik } from "formik";
 import lamb from './Lamb.png'
 
+
+
 const SignUpPage = () => {
+
+    //once we decide to format it to "Login.js":
     const mystyle = {
         color: "black",
         padding: "10px",
@@ -12,55 +16,60 @@ const SignUpPage = () => {
         initialValues: {
             email: '',
             password: '',
+            firstName: '',
+            lastName: '',
+            height: '',
+            weight: ''
         },
         onSubmit: values => {
             console.log({ values });
         },
     });
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
+    //Template format just for now:
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [height, setHeight] = useState('');
+    const [weight, setWeight] = useState('');
 
-  const handleEmailChange = event => {
-    setEmail(event.target.value);
-  };
+    const handleEmailChange = event => {
+        setEmail(event.target.value);
+    };
 
-  const handlePasswordChange = event => {
-    setPassword(event.target.value);
-  };
+    const handlePasswordChange = event => {
+        setPassword(event.target.value);
+    };
 
-  const handleFirstNameChange = event => {
-    setFirstName(event.target.value);
-  };
+    const handleFirstNameChange = event => {
+        setFirstName(event.target.value);
+    };
 
-  const handleLastNameChange = event => {
-    setLastName(event.target.value);
-  };
+    const handleLastNameChange = event => {
+        setLastName(event.target.value);
+    };
 
-  const handleHeightChange = event => {
-    setHeight(event.target.value);
-  };
+    const handleHeightChange = event => {
+        setHeight(event.target.value);
+    };
 
-  const handleWeightChange = event => {
-    setWeight(event.target.value);
-  };
+    const handleWeightChange = event => {
+        setWeight(event.target.value);
+    };
 
-  const handleCancel = event => {
-    event.preventDefault();
-    // void user's data and return to login page
-  };
+    const handleCancel = event => {
+        event.preventDefault();
+        // void user's data and return to login page
+    };
 
-  const handleSignUp = event => {
-    event.preventDefault();
-    // validate user information
-    // if valid, create account for user and store data in database
-    // if invalid, alert user of reason
-    // redirect to login page
-  };
+    const handleSignUp = event => {
+        event.preventDefault();
+        // validate user information
+        // if valid, create account for user and store data in database
+        // if invalid, alert user of reason
+        // redirect to login page
+    };
 
   return (
     <form style={mystyle} onSubmit={formik.handleSubmit}>
