@@ -35,6 +35,10 @@ For example, if I was working on [this](https://lams-eece.atlassian.net/jira/sof
 Push the commit to your branch:
 ### `git push`
 
+Create a pull request merging your newly created branch into main. Alert the software channel in discord of the planned changes so someone can look over your changes to provide feedback / accept the request and merge into main.
+
+Documentation on pull requests found [here](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
