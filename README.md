@@ -27,7 +27,7 @@ Add all necessary files that should be committed:
 ### `git add .`
 
 Commit the added files with a message corresponding to the ticket description:
-### `git commit -m "${TICKET_DESCRIPTION}`
+### `git commit -m "${TICKET_DESCRIPTION}"`
 
 For example, if I was working on [this](https://lams-eece.atlassian.net/jira/software/c/projects/LAM/boards/2?modal=detail&selectedIssue=LAM-1) ticket I would add the following commit message:
 ### `git commit -m "[FE] - Login Page Implementation"`
