@@ -7,7 +7,7 @@ Open a new instance of terminal and navigate directory where you want to store t
 
 # Working on a new ticket - Developer Runbook
 
-We will be assigning tickets for each new feature that we will develop. To work on an assigned ticket from our project found [here]https://lams-eece.atlassian.net/jira/software/c/projects/LAM/boards/2, please do the following:
+We will be assigning tickets for each new feature that we will develop. To work on an assigned ticket from our project found [here](https://lams-eece.atlassian.net/jira/software/c/projects/LAM/boards/2), please do the following:
 
 Switch to the main branch:
 ### `git checkout main`
@@ -29,7 +29,7 @@ Add all necessary files that should be committed:
 Commit the added files with a message corresponding to the ticket description:
 ### `git commit -m "${TICKET_DESCRIPTION}`
 
-For example, if I was working on this[https://lams-eece.atlassian.net/jira/software/c/projects/LAM/boards/2?modal=detail&selectedIssue=LAM-1] ticket I would add the following commit message:
+For example, if I was working on [this](https://lams-eece.atlassian.net/jira/software/c/projects/LAM/boards/2?modal=detail&selectedIssue=LAM-1) ticket I would add the following commit message:
 ### `git commit -m "[FE] - Login Page Implementation"`
 
 Push the commit to your branch:
