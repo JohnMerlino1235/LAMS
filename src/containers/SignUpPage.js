@@ -4,7 +4,7 @@ import lamb from './Lamb.png'
 
 
 
-const SignUpPage = () => {
+function SignUpPage() {
 
     //once we decide to format it to "Login.js":
     const mystyle = {
@@ -152,8 +152,16 @@ const SignUpPage = () => {
           />
         </div>
         <br />
-        <button onClick={handleSignUp}>Sign Up</button>
-        <button onClick={handleCancel}>Cancel</button>
+        <button type="submit">
+          <a href="/log-in" class="href">
+              Sign up
+          </a>
+        </button>
+        <button>
+          <a href="/log-in" class="href">
+            Cancel
+          </a>
+          </button>
       </form>
     </div>
     </form>

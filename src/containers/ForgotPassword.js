@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from "formik";
 import lamb from './Lamb.png'
 
-const ForgotPasswordPage = () => {
+function ForgotPasswordPage() {
     //once we decide to format it to "Login.js":
     const mystyle = {
         color: "black",
@@ -101,8 +101,16 @@ const ForgotPasswordPage = () => {
             />
             </div>
             <br />
-            <button onClick={handleChangePassword}>Change Password</button>
-            <button onClick={handleCancel}>Cancel</button>
+        <button type="submit">
+          <a href="/log-in" class="href">
+            Change Password
+          </a>
+        </button>
+        <button>
+          <a href="/log-in" class="href">
+            Cancel
+          </a>
+        </button>
         </form>
         </div>
         </form>

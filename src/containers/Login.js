@@ -58,7 +58,21 @@ function Login() {
                     />
                 </div>
             </div>  
-            <button type="submit">Login</button>
+            <button>
+                <a href="/sign-up" class="href">
+                    Sign Up
+                </a>
+            </button>            
+            <button>
+                <a href="/forgot-password" class="href">
+                    Forgot Password
+                </a>
+            </button>
+            <button type="submit">
+                <a href="/log-in" class="href">
+                    Login
+                </a>
+            </button>
         </form>
     );
 };
