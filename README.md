@@ -1,9 +1,13 @@
 # Getting Started with the LAMBS Front-End Repository
 
-# Cloning the Repository
+# Cloning the Repository and getting started
 
 Open a new instance of terminal and navigate directory where you want to store the repository. Run the following:
 ### `git clone https://github.com/JohnMerlino1235/LAMS.git`
+
+Once the repository is successfully cloned, ensure you are in the LAMS-APP directory and run the following:
+### `npm install`
+This will install our dependencies for our codebase
 
 # Working on a new ticket - Developer Runbook
 
