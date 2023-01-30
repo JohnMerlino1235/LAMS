@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import lamb from './Lamb.png'
+import axios from "axios";
 
 function Login() {
     const mystyle = {
@@ -13,8 +14,11 @@ function Login() {
             password: '',
         },
         onSubmit: values => {
-            console.log({ values });
-        },
+            // console.log({ values });
+            axios.post(`http://127.0.0.1:5000//fetch_user_from_db/${values.email}`, {
+                'email': values.email
+              }).then(response => console.log(response.data));
+         },
     });
     return (
         <form style={mystyle} onSubmit={formik.handleSubmit}>
@@ -68,7 +72,7 @@ function Login() {
                     Forgot Password
                 </a>
             </button>
-            <button type="submit">
+            <button type="submit"> onChange={formik.onSubmit}
                 <a href="/log-in" class="href">
                     Login
                 </a>
