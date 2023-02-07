@@ -63,15 +63,12 @@ function ForgotPasswordPage() {
                 }}
             />
         </div>
-    <div>
         <div style={mystyle}>
                 <h1>LAMS</h1>
                 <p>Leg Activity Monitoring System</p>
-                <p>Change Password:</p>
+                <h2>Change Password:</h2>
             </div>
-
-        <form>
-            <div>
+            {/* <div>
             Email:
             <input
                 type="email"
@@ -110,9 +107,53 @@ function ForgotPasswordPage() {
           <a href="/log-in" class="href">
             Cancel
           </a>
+        </button> */}
+        <div style={mystyle}>
+                <label htmlFor="email">Email Address:</label>
+                <div>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                    />
+                </div>
+            </div>
+            <div style={mystyle}>
+                <label htmlFor="password">New Password:</label>
+                <div>
+                    <input
+                        id="password"
+                        name="password"
+                        type={"password"}
+                        onChange={formik.handleChange}
+                        value={formik.values.password}
+                    />
+                </div>
+            </div>  
+            <div style={mystyle}>
+                <label htmlFor="newPassword">Re-Enter New Password:</label>
+                <div>
+                    <input
+                        id="newPassword"
+                        name="newPassword"
+                        type={"newPassword"}
+                        onChange={formik.handleChange}
+                        value={formik.values.newPassword}
+                    />
+                </div>
+            </div>
+            <button type="submit">
+          <a href="/log-in" class="href">
+            Change Password
+          </a>
         </button>
-        </form>
-        </div>
+        <button>
+          <a href="/log-in" class="href">
+            Cancel
+          </a>
+        </button> 
         </form>
     );
 };
