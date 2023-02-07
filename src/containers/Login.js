@@ -37,9 +37,10 @@ function Login() {
             <div style={mystyle}>
                 <h1>LAMS</h1>
                 <p>Leg Activity Monitoring System</p>
+                <h2>Log In</h2>
             </div>
             <div style={mystyle}>
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">Email Address:</label>
                 <div>
                     <input
                         id="email"
@@ -51,7 +52,7 @@ function Login() {
                 </div>
             </div>
             <div style={mystyle}>
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password:</label>
                 <div>
                     <input
                         id="password"
@@ -72,7 +73,7 @@ function Login() {
                     Forgot Password
                 </a>
             </button>
-            <button type="submit"> onChange={formik.onSubmit}
+            <button type="submit" onChange={formik.onSubmit}>
                 <a href="/log-in" class="href">
                     Login
                 </a>

@@ -38,10 +38,10 @@ return (
         <div style={mystyle}>
             <h1>LAMS</h1>
             <p>Leg Activity Monitoring System</p>
-            <h2>Personal Details:</h2>
+            <h2>Personal Details</h2>
         </div>
         <div style={mystyle}>
-            <label htmlFor="firstName">First Name</label>
+            <label htmlFor="firstName">First Name:</label>
             <div>
                 <input
                     id="firstName"
@@ -53,7 +53,7 @@ return (
             </div>
         </div>
         <div style={mystyle}>
-            <label htmlFor="lastName">Last Name</label>
+            <label htmlFor="lastName">Last Name:</label>
             <div>
                 <input
                     id="lastName"
@@ -65,7 +65,7 @@ return (
             </div>
         </div>
         <div style={mystyle}>
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Email Address:</label>
             <div>
                 <input
                     id="email"
@@ -77,7 +77,7 @@ return (
             </div>
         </div>
         <div style={mystyle}>
-            <label htmlFor="height">Height</label>
+            <label htmlFor="height">Height:</label>
             <div>
                 <input
                     id="height"
@@ -89,7 +89,7 @@ return (
             </div>
         </div>
         <div style={mystyle}>
-            <label htmlFor="weight">Weight</label>
+            <label htmlFor="weight">Weight:</label>
             <div>
                 <input
                     id="weight"
@@ -101,7 +101,7 @@ return (
             </div>
         </div>
         <div style={mystyle}>
-        <label htmlFor="targetArea">Target Area</label>
+        <label htmlFor="targetArea">Target Area:</label>
             <div>
                 <select
                   id="targetArea"

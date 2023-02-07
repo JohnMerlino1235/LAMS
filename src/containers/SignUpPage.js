@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import lamb from './Lamb.png'
 
 
-
 function SignUpPage() {
 
     //once we decide to format it to "Login.js":
@@ -19,8 +18,10 @@ function SignUpPage() {
             firstName: '',
             lastName: '',
             height: '',
-            weight: ''
+            weight: '',
+            targetArea: ''
         },
+        //TO-DO
         onSubmit: values => {
             console.log({ values });
         },
@@ -85,13 +86,12 @@ function SignUpPage() {
                 }}
             />
         </div>
-    <div>
         <div style={mystyle}>
                 <h1>LAMS</h1>
                 <p>Leg Activity Monitoring System</p>
-                <p>Sign-Up Page:</p>
+                <h2>Sign-Up Page:</h2>
             </div>
-      <form>
+      {/* <form>
         <div>
           Email: 
           <input
@@ -154,7 +154,7 @@ function SignUpPage() {
         <br />
         <button type="submit">
           <a href="/log-in" class="href">
-              Sign up
+              Create Account
           </a>
         </button>
         <button>
@@ -162,8 +162,103 @@ function SignUpPage() {
             Cancel
           </a>
           </button>
-      </form>
-    </div>
+      </form> */}
+      <div style ={mystyle}>
+        <label htmlFor='firstName'>First Name:</label>
+        <div>
+            <input
+                id='firstName'
+                name='firstName'
+                type='firstName'
+                onChange={formik.handleChange}
+                value={formik.values.firstName}
+                />
+        </div>
+      </div>
+      <div style ={mystyle}>
+        <label htmlFor='lastName'>Last Name:</label>
+        <div>
+            <input
+                id='lastName'
+                name='lastName'
+                type='lastName'
+                onChange={formik.handleChange}
+                value={formik.values.lastName}
+                />
+        </div>
+      </div>
+      <div style ={mystyle}>
+        <label htmlFor='email'>Email Address:</label>
+        <div>
+            <input
+                id='email'
+                name='email'
+                type='email'
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                />
+        </div>
+      </div>
+      <div style ={mystyle}>
+        <label htmlFor='password'>Password:</label>
+        <div>
+            <input
+                id='password'
+                name='password'
+                type='password'
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                />
+        </div>
+      </div>
+      <div style ={mystyle}>
+        <label htmlFor='height'>Height:</label>
+        <div>
+            <input
+                id='height'
+                name='height'
+                type='height'
+                onChange={formik.handleChange}
+                value={formik.values.height}
+                />
+        </div>
+      </div>
+      <div style ={mystyle}>
+        <label htmlFor='weight'>Weight:</label>
+        <div>
+            <input
+                id='weight'
+                name='weight'
+                type='weight'
+                onChange={formik.handleChange}
+                value={formik.values.weight}
+                />
+        </div>
+      </div>
+      <div style={mystyle}>
+        <label htmlFor="targetArea">Target Area:</label>
+            <div>
+                <select
+                  id="targetArea"
+                  name="targetArea"
+                  type="targetArea"
+                  onChange={formik.handleChange}
+                  value={formik.values.targetArea}>
+                  <option value="upperLeg">Upper Leg</option>
+                  <option value="lowerLeg">Lower Leg</option>
+                </select>
+            </div>
+        </div>
+      <button type="submit" onChange={formik.onSubmit}>
+          <a href="/log-in" class="href">
+              Create Account
+          </a>
+        </button>
+        <button>
+          <a href="/log-in" class="href">
+            Cancel
+          </a>
+          </button>
     </form>
   );
 };
