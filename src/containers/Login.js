@@ -1,11 +1,13 @@
 import { useFormik } from "formik";
 import lamb from './Lamb.png'
 import axios from "axios";
+import './global.css';
+import Rectangle from 'react-rectangle';
 
 function Login() {
     const mystyle = {
         color: "black",
-        padding: "10px",
+        padding: "-100px",
         textAlign: "center",
       };
     const formik = useFormik({
@@ -21,28 +23,23 @@ function Login() {
          },
     });
     return (
-        <form style={mystyle} onSubmit={formik.handleSubmit}>
-        <div>
-            <img
-                src={lamb}
-                alt="LAMB"
-                style={{
-                    width: "100px",
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    marginTop: "0"
-                }}
-            />
+        <form className={mystyle} onSubmit={formik.handleSubmit}>
+        <div className="Global-ellipses">
+            <Rectangle className="Global-ellipse-blue">
+            <Rectangle className="Global-ellipse-red">
+            </Rectangle>
+            </Rectangle>
+
         </div>
             <div style={mystyle}>
                 <h1>LAMS</h1>
                 <p>Leg Activity Monitoring System</p>
                 <h2>Log In</h2>
-            </div>
-            <div style={mystyle}>
-                <label htmlFor="email">Email Address:</label>
+        </div>
+            <div className="Global-test">
+                <label htmlFor="email">Email Address</label>
                 <div>
-                    <input
+                    <input className="Global-input-box"
                         id="email"
                         name="email"
                         type="email"
@@ -51,10 +48,10 @@ function Login() {
                     />
                 </div>
             </div>
-            <div style={mystyle}>
-                <label htmlFor="password">Password:</label>
+            <div className="Global-test-2">
+                <label htmlFor="password">Password</label>
                 <div>
-                    <input
+                    <input className="Global-input-box"
                         id="password"
                         name="password"
                         type={"password"}
@@ -63,19 +60,21 @@ function Login() {
                     />
                 </div>
             </div>  
-            <button>
-                <a href="/sign-up" class="href">
+            <div className="Global-button-login-margin">
+                <button class= "Global-button-login" type="submit" onChange={formik.onSubmit}>
+                    <a href="/log-in">
+                        Login
+                    </a>
+                </button>
+            </div>
+            <button class="Global-button-sign-up">
+                <a href="/sign-up">
                     Sign Up
                 </a>
             </button>            
-            <button>
-                <a href="/forgot-password" class="href">
+            <button class="Global-button-forgot-password">
+                <a href="/forgot-password">
                     Forgot Password
-                </a>
-            </button>
-            <button type="submit" onChange={formik.onSubmit}>
-                <a href="/log-in" class="href">
-                    Login
                 </a>
             </button>
         </form>
