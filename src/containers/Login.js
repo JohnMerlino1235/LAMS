@@ -26,15 +26,14 @@ function Login() {
         <form className={mystyle} onSubmit={formik.handleSubmit}>
         <div className="Global-ellipses">
             <Rectangle className="Global-ellipse-blue">
-            <Rectangle className="Global-ellipse-red">
+                <Rectangle className="Global-ellipse-red">
+                </Rectangle>
             </Rectangle>
-            </Rectangle>
-
         </div>
-            <div style={mystyle}>
-                <h1>LAMS</h1>
-                <p>Leg Activity Monitoring System</p>
-                <h2>Log In</h2>
+        <div style={mystyle}>
+            <h1>LAMS</h1>
+            <p>Leg Activity Monitoring System</p>
+            <h2>Log In</h2>
         </div>
             <div className="Global-test">
                 {/* <label htmlFor="email">Email Address</label> */}
@@ -46,6 +45,7 @@ function Login() {
                         onChange={formik.handleChange}
                         value={formik.values.email}
                         placeholder="Email"
+                        required
                     />
                     <div className="Global-forgot-password-text">
                         Don't have an account? Click the Sign-Up button below!
@@ -62,6 +62,7 @@ function Login() {
                         onChange={formik.handleChange}
                         value={formik.values.password}
                         placeholder="Password"
+                        required
                     />
                     <div className="Global-forgot-password-text">
                         Forgot your password? Click the Forgot Password button to reset it!
@@ -76,12 +77,12 @@ function Login() {
                 </button>
             </div>
             <div className="Global-button-div">
-                <button class="Global-button-sign-up">
+                <button class="Global-button-sign-up" type="button">
                     <a class="Global-button-href-styling" href="/sign-up">
                         Sign-Up
                     </a>
                 </button>            
-                <button class="Global-button-forgot-password">
+                <button class="Global-button-forgot-password" type="button">
                     <a class="Global-button-href-styling" href="/forgot-password">
                         Forgot Password?
                     </a>
