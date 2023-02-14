@@ -60,23 +60,25 @@ function Login() {
                     />
                 </div>
             </div>  
-            <div className="Global-button-login-margin">
+            <div className="Global-button-login-div">
                 <button class= "Global-button-login" type="submit" onChange={formik.onSubmit}>
                     <a href="/log-in">
                         Login
                     </a>
                 </button>
             </div>
-            <button class="Global-button-sign-up">
-                <a href="/sign-up">
-                    Sign Up
-                </a>
-            </button>            
-            <button class="Global-button-forgot-password">
-                <a href="/forgot-password">
-                    Forgot Password
-                </a>
-            </button>
+            <div className="Global-button-div">
+                <button class="Global-button-sign-up">
+                    <a href="/sign-up">
+                        Sign Up
+                    </a>
+                </button>            
+                <button class="Global-button-forgot-password">
+                    <a href="/forgot-password">
+                        Forgot Password?
+                    </a>
+                </button>
+            </div>
         </form>
     );
 };

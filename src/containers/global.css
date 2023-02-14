@@ -4,40 +4,39 @@
 
 .Global-button-login {
     position: flex;
-    width: 120px;
-    height: 25px;
-    left: 68px;
-    top: 666px;
+    width: 240px;
+    height: 50px;
     background: rgba(0, 148, 255, 0.25);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .Global-button-sign-up {
-    position: flex;
-    width: 120px;
-    height: 25px;
-    left: 68px;
-    top: 666px;
+    position: inherit;
+    width: 180px;
+    height: 37.5px;
     background: rgba(0, 148, 255, 0.25);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .Global-button-forgot-password {
-    position: flex;
-    width: 120px;
-    height: 25px;
-    left: 68px;
-    top: 666px;
+    position: inherit;
+    width: 180px;
+    height: 37.5px;
     background: rgba(0, 148, 255, 0.25);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
-.Global-button-login-margin {
-    align-content: center;
-    position: center;
-    margin-left: 130px;
+.Global-button-login-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
 }
 
+.Global-button-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 7.5%;
+}
 .Global-text {
     position: flex;
     width: 254px;
