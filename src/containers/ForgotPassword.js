@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import { useFormik } from "formik";
-import lamb from './Lamb.png'
 import Rectangle from 'react-rectangle';
+import './global.css';
+import sheep from './sheep.gif';
 
 function ForgotPasswordPage() {
     //once we decide to format it to "Login.js":
@@ -33,6 +33,9 @@ function ForgotPasswordPage() {
             <h1>LAMS</h1>
             <p>Leg Activity Monitoring System</p>
             <h2>Change Password</h2>
+        </div>
+        <div className="Global-sheep-div">
+            <img src={sheep} className="Global-sheep" alt="Loading..."/>
         </div>
         <div className="Global-test">
             <div>

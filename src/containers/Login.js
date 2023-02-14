@@ -1,8 +1,8 @@
 import { useFormik } from "formik";
-import lamb from './Lamb.png'
 import axios from "axios";
 import './global.css';
 import Rectangle from 'react-rectangle';
+import sheep from './sheep.gif';
 
 function Login() {
     const mystyle = {
@@ -34,6 +34,9 @@ function Login() {
             <h1>LAMS</h1>
             <p>Leg Activity Monitoring System</p>
             <h2>Log In</h2>
+        </div>
+        <div className="Global-sheep-div">
+            <img src={sheep} className="Global-sheep" alt="Loading..."/>
         </div>
             <div className="Global-test">
                 {/* <label htmlFor="email">Email Address</label> */}
