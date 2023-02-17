@@ -15,6 +15,7 @@ function App() {
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/forgot-password' element={<ForgotPasswordPage />} />
         <Route path='/personal-details' element={<PersonalDetailsPage />} />
+
       </Routes>
     </BrowserRouter>
   );
