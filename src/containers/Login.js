@@ -80,7 +80,7 @@ function Login() {
         </button>
       </div>
 
-      <div className="buttons">
+      <div className="buttons-2nd-row">
         <button className="button-style" type="submit">
           <a class="button-text" href="/log-in">
             Sign-Up
@@ -88,7 +88,7 @@ function Login() {
         </button>
 
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
+          <a class="button-text" href="/forgot-password">
             Forgot Password?
           </a>
         </button>
