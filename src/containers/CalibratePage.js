@@ -1,26 +1,29 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from 'react';
 import { useFormik } from "formik";
-import "./css/home-page.css";
-import Rectangle from "react-rectangle";
-import sheep from "./sheep.gif";
-import "./css/hamburger-menu.css";
+import './css/home-page.css';
+import Rectangle from 'react-rectangle';
+import sheep from './sheep.gif';
+import './css/hamburger-menu.css'
 
-function HomePage() {
-  const formik = useFormik({
-    initialValues: {},
 
-    //TO-DO
-    onSubmit: (values) => {
-      console.log({ values });
-    },
-  });
+function Calibrate() {
 
-  const [menuDisabled, setMenuDisabled] = useState(true);
 
-  const handleCheckboxChange = (event) => {
-    setMenuDisabled(!event.target.checked);
-  };
-  
+    const formik = useFormik({
+        initialValues: {
+        },
+        
+        //TO-DO
+        onSubmit: values => {
+            console.log({ values });
+        },
+    });
+
+    const [menuDisabled, setMenuDisabled] = useState(true);
+
+    const handleCheckboxChange = (event) => {
+      setMenuDisabled(!event.target.checked);
+    };
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -53,39 +56,32 @@ function HomePage() {
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">Home</h2>
       </div>
 
       <div className="sheep">
         <img src={sheep} className="sheep-image" alt="Loading..." />
       </div>
 
-      <div className="welcome-message">
-        <p className="welcome-text">
-          Welcome Back! <br></br>
-          You still have exercises to do today...
-        </p>
+      <div className='title'>
+        <h2 className="title-fix">Wait for Calibration...</h2>
       </div>
 
       <div className="buttons-home">
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/instructions">
-            Exercise
+          <a className="button-text" href="/exercise">
+            Next
           </a>
         </button>
+
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/results">
-            Results
+          <a className="button-text" href="/instructions">
+            Back
           </a>
         </button>
-        <button className="button-style-home" type="submit">
-          <a class="button-text" href="/todo">
-            Tasks
-          </a>
-        </button>
-      </div>
+    </div>
+      
     </form>
   );
-}
+};
 
-export default HomePage;
+export default Calibrate;

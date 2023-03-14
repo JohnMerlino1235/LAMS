@@ -19,6 +19,12 @@ function Profile() {
         },
     });
 
+    const [menuDisabled, setMenuDisabled] = useState(true);
+
+    const handleCheckboxChange = (event) => {
+      setMenuDisabled(!event.target.checked);
+    };
+
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
       <div className="ellipses">
@@ -29,12 +35,16 @@ function Profile() {
 
       <nav className="hamburgerMenu" role="navigation">
         <div id="menuToggle">
-            <input type="checkbox" />
+            <input
+             id="check"
+             type="checkbox"
+             onChange={handleCheckboxChange}
+             checked={!menuDisabled} />
             <span></span>
             <span></span>
             <span></span>
-            <ul id="menu">
-            <a href="home-page"><li>Home</li></a>
+            <ul id="menu" className={menuDisabled ? 'disabled' : ''}>
+                <a href="home-page"><li>Home</li></a>
                 <a href="profile"><li>Profile</li></a>
                 <a href="messages"><li>Messages</li></a>
                 <a href="settings-help"><li>Settings/Help</li></a>
@@ -52,6 +62,7 @@ function Profile() {
       <div className="sheep">
         <img src={sheep} className="sheep-image" alt="Loading..." />
       </div>
+      
 
     </form>
   );

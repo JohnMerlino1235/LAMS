@@ -134,3 +134,7 @@
     color: black;
     font-size: 18px;
 }
+
+.disabled {
+    pointer-events:none;
+}
