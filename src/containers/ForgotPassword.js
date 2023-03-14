@@ -27,7 +27,7 @@ function ForgotPasswordPage() {
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">Sign Up</h2>
+        <h2 className="title-fix">Change Password</h2>
       </div>
 
       <div className="sheep">
