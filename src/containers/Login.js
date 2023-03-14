@@ -33,7 +33,7 @@ function Login() {
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">Sign Up</h2>
+        <h2 className="title-fix">Log In</h2>
       </div>
 
       <div className="sheep">
@@ -82,7 +82,7 @@ function Login() {
 
       <div className="buttons-2nd-row">
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
+          <a class="button-text" href="/sign-up">
             Sign-Up
           </a>
         </button>
