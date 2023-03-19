@@ -6,7 +6,7 @@ import sheep from './sheep.gif';
 import './css/hamburger-menu.css'
 
 
-function Messages() {
+function ToDo() {
 
 
     const formik = useFormik({
@@ -56,15 +56,18 @@ function Messages() {
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">Messages</h2>
       </div>
 
       <div className="sheep">
         <img src={sheep} className="sheep-image" alt="Loading..." />
       </div>
 
+      <div className="title">
+        <h2 className="title-fix">To-Do</h2>
+      </div>
+
     </form>
   );
 };
 
-export default Messages;
+export default ToDo;

@@ -10,6 +10,11 @@ import Profile from './containers/Profile';
 import Messages from './containers/Messages';
 import SettingsHelp from './containers/SettingsHelp';
 import About from './containers/About';
+import Calibrate from './containers/CalibratePage';
+import Instructions from './containers/Instructions';
+import Exercise from './containers/Exercise';
+import ToDo from './containers/ToDo';
+import Results from './containers/Results';
 
 function App() {
   return (
@@ -25,6 +30,13 @@ function App() {
         <Route path='/messages' element={<Messages />} />
         <Route path='/settings-help' element={<SettingsHelp />} />
         <Route path='/about' element={<About />} />
+        <Route path='/instructions' element={<Instructions />} />
+        <Route path='/calibrate' element={<Calibrate />} />
+        <Route path='/exercise' element={<Exercise />} />
+        <Route path='/todo' element={<ToDo />} />
+        <Route path='/results' element={<Results />} />
+
+
         
 
       </Routes>
