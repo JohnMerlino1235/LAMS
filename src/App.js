@@ -25,20 +25,16 @@ function App() {
         <Route path='/sign-up' element={<SignUpPage />} />
         <Route path='/forgot-password' element={<ForgotPasswordPage />} />
         <Route path='/personal-details' element={<PersonalDetailsPage />} />
-        <Route path='/home-page' element={<HomePage />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/messages' element={<Messages />} />
-        <Route path='/settings-help' element={<SettingsHelp />} />
-        <Route path='/about' element={<About />} />
+        <Route path='/home-page/:email' element={<HomePage />} />
+        <Route path='/profile/:email' element={<Profile />} />
+        <Route path='/messages/:email' element={<Messages />} />
+        <Route path='/settings-help/:email' element={<SettingsHelp />} />
+        <Route path='/about/:email' element={<About />} />
         <Route path='/instructions' element={<Instructions />} />
         <Route path='/calibrate' element={<Calibrate />} />
         <Route path='/exercise' element={<Exercise />} />
         <Route path='/todo' element={<ToDo />} />
         <Route path='/results' element={<Results />} />
-
-
-        
-
       </Routes>
     </BrowserRouter>
   );

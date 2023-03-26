@@ -3,9 +3,11 @@ import axios from "axios";
 import "./global.css";
 import Rectangle from "react-rectangle";
 import sheep from "./sheep.gif";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
+  let navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -13,12 +15,14 @@ function Login() {
     },
 
     onSubmit: (values) => {
-      // console.log({ values });
+      navigate(`/home-page/${values.email}`);
       axios
         .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.email}`, {
           email: values.email,
         })
-        .then((response) => console.log(response.data));
+        .then((response) => {
+          console.log(response.data);
+        });
     },
 
   });
@@ -74,21 +78,16 @@ function Login() {
 
       <div className="buttons">
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
             Login
-          </a>
         </button>
       </div>
 
       <div className="buttons-2nd-row">
-        <button className="button-style" type="submit">
-          <a class="button-text" href="/sign-up">
+        <button className="button-style" onClick={() => navigate("/sign-up")} type="submit">
             Sign-Up
-          </a>
         </button>
-
-        <button className="button-style" type="submit">
-          <a class="button-text" href="/forgot-password">
+        <button className="button-style"  onClick={() => navigate("/forgot-password")}>
+          <a class="button-text">
             Forgot Password?
           </a>
         </button>

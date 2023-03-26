@@ -4,6 +4,7 @@ import "./css/home-page.css";
 import Rectangle from "react-rectangle";
 import sheep from "./sheep.gif";
 import "./css/hamburger-menu.css";
+import { useParams } from 'react-router-dom';
 
 function HomePage() {
   const formik = useFormik({
@@ -16,6 +17,8 @@ function HomePage() {
   });
 
   const [menuDisabled, setMenuDisabled] = useState(true);
+
+    const params = useParams()
 
   const handleCheckboxChange = (event) => {
     setMenuDisabled(!event.target.checked);
@@ -41,11 +44,11 @@ function HomePage() {
             <span></span>
             <span></span>
             <ul id="menu" className={menuDisabled ? 'disabled' : ''}>
-                <a href="home-page"><li>Home</li></a>
-                <a href="profile"><li>Profile</li></a>
-                <a href="messages"><li>Messages</li></a>
-                <a href="settings-help"><li>Settings/Help</li></a>
-                <a href="about"><li>About</li></a>
+                <a href={`/home-page/${params.email}`}><li>Home</li></a>
+                <a href={`/profile/${params.email}`}><li>Profile</li></a>
+                <a href={`/messages/${params.email}`}><li>Messages</li></a>
+                <a href={`/settings-help/${params.email}`}><li>Settings/Help</li></a>
+                <a href={`/about/${params.email}`}><li>About</li></a>
             </ul>
         </div>
       </nav>
