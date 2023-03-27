@@ -3,8 +3,9 @@ import { useFormik } from "formik";
 import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-import './css/hamburger-menu.css'
 import { useParams } from 'react-router-dom';
+// import messages from './assets/messages.png';
+import './css/hamburger-menu.css';
 
 
 function Messages() {
@@ -63,6 +64,10 @@ function Messages() {
 
       <div className="sheep">
         <img src={sheep} className="sheep-image" alt="Loading..." />
+      </div>
+
+      <div className="sheep">
+        {/* <img src={messages} className="messages-image" alt="Loading..." /> */}
       </div>
 
     </form>

@@ -65,7 +65,7 @@ function HomePage() {
 
       <div className="welcome-message">
         <p className="welcome-text">
-          Welcome Back! <br></br>
+          Welcome Back {params.email}! <br></br>
           You still have exercises to do today...
         </p>
       </div>
