@@ -13,7 +13,7 @@ import About from './containers/About';
 import Calibrate from './containers/CalibratePage';
 import Instructions from './containers/Instructions';
 import Exercise from './containers/Exercise';
-import ToDo from './containers/ToDo';
+import MyNotebook from './containers/MyNotebook';
 import Results from './containers/Results';
 
 function App() {
@@ -30,11 +30,11 @@ function App() {
         <Route path='/messages/:email' element={<Messages />} />
         <Route path='/settings-help/:email' element={<SettingsHelp />} />
         <Route path='/about/:email' element={<About />} />
-        <Route path='/instructions' element={<Instructions />} />
-        <Route path='/calibrate' element={<Calibrate />} />
-        <Route path='/exercise' element={<Exercise />} />
-        <Route path='/todo' element={<ToDo />} />
-        <Route path='/results' element={<Results />} />
+        <Route path='/instructions/:email' element={<Instructions />} />
+        <Route path='/calibrate/:email' element={<Calibrate />} />
+        <Route path='/exercise/:email' element={<Exercise />} />
+        <Route path='/notebook/:email' element={<MyNotebook />} />
+        <Route path='/results/:email' element={<Results />} />
       </Routes>
     </BrowserRouter>
   );

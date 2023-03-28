@@ -4,10 +4,12 @@ import "./global.css";
 import Rectangle from "react-rectangle";
 import sheep from "./sheep.gif";
 import { useNavigate } from "react-router-dom";
+import HamburgerMenu from "./HamburgerMenu";
 
 function Login() {
 
   let navigate = useNavigate();
+  
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -33,6 +35,7 @@ function Login() {
           <Rectangle className="ellipse-red"></Rectangle>
         </Rectangle>
       </div>
+
 
       <div className="title">
         <h1>LAMS</h1>

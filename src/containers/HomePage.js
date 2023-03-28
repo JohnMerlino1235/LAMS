@@ -5,6 +5,7 @@ import Rectangle from "react-rectangle";
 import sheep from "./sheep.gif";
 import "./css/hamburger-menu.css";
 import { useParams } from 'react-router-dom';
+import HamburgerMenu from "./HamburgerMenu";
 
 function HomePage() {
   const formik = useFormik({
@@ -16,14 +17,8 @@ function HomePage() {
     },
   });
 
-  const [menuDisabled, setMenuDisabled] = useState(true);
+  const params = useParams()
 
-    const params = useParams()
-
-  const handleCheckboxChange = (event) => {
-    setMenuDisabled(!event.target.checked);
-  };
-  
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -33,25 +28,7 @@ function HomePage() {
         </Rectangle>
       </div>
 
-      <nav className="hamburgerMenu" role="navigation">
-        <div id="menuToggle">
-            <input
-             id="check"
-             type="checkbox"
-             onChange={handleCheckboxChange}
-             checked={!menuDisabled} />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu" className={menuDisabled ? 'disabled' : ''}>
-                <a href={`/home-page/${params.email}`}><li>Home</li></a>
-                <a href={`/profile/${params.email}`}><li>Profile</li></a>
-                <a href={`/messages/${params.email}`}><li>Messages</li></a>
-                <a href={`/settings-help/${params.email}`}><li>Settings/Help</li></a>
-                <a href={`/about/${params.email}`}><li>About</li></a>
-            </ul>
-        </div>
-      </nav>
+      <HamburgerMenu/>
 
       <div className="title">
         <h1>LAMS</h1>
@@ -65,7 +42,7 @@ function HomePage() {
 
       <div className="welcome-message">
         <p className="welcome-text">
-          Welcome Back! <br></br>
+          Welcome Back {params.email}! <br></br>
           You still have exercises to do today...
         </p>
       </div>
@@ -83,7 +60,7 @@ function HomePage() {
         </button>
         <button className="button-style-home" type="submit">
           <a class="button-text" href="/todo">
-            Tasks
+            My Notebook
           </a>
         </button>
       </div>
