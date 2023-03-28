@@ -4,6 +4,7 @@ import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
 import './css/hamburger-menu.css'
+import HamburgerMenu from './HamburgerMenu';
 
 
 function Calibrate() {
@@ -19,11 +20,7 @@ function Calibrate() {
         },
     });
 
-    const [menuDisabled, setMenuDisabled] = useState(true);
 
-    const handleCheckboxChange = (event) => {
-      setMenuDisabled(!event.target.checked);
-    };
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -33,25 +30,7 @@ function Calibrate() {
         </Rectangle>
       </div>
 
-      <nav className="hamburgerMenu" role="navigation">
-        <div id="menuToggle">
-            <input
-             id="check"
-             type="checkbox"
-             onChange={handleCheckboxChange}
-             checked={!menuDisabled} />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu" className={menuDisabled ? 'disabled' : ''}>
-                <a href="home-page"><li>Home</li></a>
-                <a href="profile"><li>Profile</li></a>
-                <a href="messages"><li>Messages</li></a>
-                <a href="settings-help"><li>Settings/Help</li></a>
-                <a href="about"><li>About</li></a>
-            </ul>
-        </div>
-      </nav>
+      <HamburgerMenu/>
 
       <div className="title">
         <h1>LAMS</h1>

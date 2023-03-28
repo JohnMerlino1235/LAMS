@@ -6,9 +6,13 @@ import sheep from './sheep.gif';
 import { useParams } from 'react-router-dom';
 import './css/hamburger-menu.css';
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
+import HamburgerMenu from './HamburgerMenu';
 
 function Profile() {
+
+  let navigate = useNavigate();
+
   const params = useParams()
 
 
@@ -56,25 +60,7 @@ function Profile() {
         </Rectangle>
       </div>
 
-      <nav className="hamburgerMenu" role="navigation">
-        <div id="menuToggle">
-            <input
-             id="check"
-             type="checkbox"
-             onChange={handleCheckboxChange}
-             checked={!menuDisabled} />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-            <a href={`/home-page/${params.email}`}><li>Home</li></a>
-                <a href={`/profile/${params.email}`}><li>Profile</li></a>
-                <a href={`/messages/${params.email}`}><li>Messages</li></a>
-                <a href={`/settings-help/${params.email}`}><li>Settings/Help</li></a>
-                <a href={`/about/${params.email}`}><li>About</li></a>
-            </ul>
-        </div>
-      </nav>
+      <HamburgerMenu/>
 
       <div className="title">
         <h1>LAMS</h1>
@@ -156,11 +142,24 @@ function Profile() {
 
       <div className="buttons-home">
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/forgot-password">
+          <a class="button-text" href={`/forgot-password/${params.email}`}>
             Change Password
           </a>
         </button>
        </div>
+
+       <div className="buttons-2nd-row">
+        <button className="button-style" type="submit">
+        <a class="button-text">
+            Cancel
+          </a>
+        </button>
+        <button className="button-style">
+          <a class="button-text">
+            Save
+          </a>
+        </button>
+      </div>
       
 
     </form>

@@ -6,6 +6,7 @@ import sheep from './sheep.gif';
 import { useParams } from 'react-router-dom';
 // import messages from './assets/messages.png';
 import './css/hamburger-menu.css';
+import HamburgerMenu from './HamburgerMenu';
 
 
 function Messages() {
@@ -22,11 +23,7 @@ function Messages() {
         },
     });
 
-    const [menuDisabled, setMenuDisabled] = useState(true);
 
-    const handleCheckboxChange = (event) => {
-      setMenuDisabled(!event.target.checked);
-    };
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -36,25 +33,7 @@ function Messages() {
         </Rectangle>
       </div>
 
-      <nav className="hamburgerMenu" role="navigation">
-        <div id="menuToggle">
-            <input
-             id="check"
-             type="checkbox"
-             onChange={handleCheckboxChange}
-             checked={!menuDisabled} />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-            <a href={`/home-page/${params.email}`}><li>Home</li></a>
-                <a href={`/profile/${params.email}`}><li>Profile</li></a>
-                <a href={`/messages/${params.email}`}><li>Messages</li></a>
-                <a href={`/settings-help/${params.email}`}><li>Settings/Help</li></a>
-                <a href={`/about/${params.email}`}><li>About</li></a>
-            </ul>
-        </div>
-      </nav>
+      <HamburgerMenu/>
 
       <div className="title">
         <h1>LAMS</h1>

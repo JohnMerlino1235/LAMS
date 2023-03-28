@@ -138,3 +138,23 @@
 .disabled {
     pointer-events:none;
 }
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.input-box-profile {
+    font-size: 12px;
+    margin-left: 3%;
+}
+
+.input-box-notebook {
+    font-size: 16px;
+    height: 250px;
+    width: 70%;
+    text-align: top;
+}
