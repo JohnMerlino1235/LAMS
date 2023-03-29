@@ -3,24 +3,18 @@ import { useFormik } from "formik";
 import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-import './css/hamburger-menu.css'
+import './css/hamburger-menu.css';
 import HamburgerMenu from './HamburgerMenu';
 
-
 function Instructions() {
+  const formik = useFormik({
+    initialValues: {},
 
-
-    const formik = useFormik({
-        initialValues: {
-        },
-        
-        //TO-DO
-        onSubmit: values => {
-            console.log({ values });
-        },
-    });
-
-
+    // TO-DO
+    onSubmit: (values) => {
+      console.log({ values });
+    },
+  });
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -30,12 +24,11 @@ function Instructions() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        
       </div>
 
       <div className="sheep">
@@ -50,20 +43,19 @@ function Instructions() {
         <p className="welcome-text">
           Instructions: <br></br>
           1. <br></br>
-          2. 
+          2.
         </p>
       </div>
 
       <div className="buttons-home">
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/calibrate">
+          <a className="button-text" href="/calibrate">
             Calibrate
           </a>
         </button>
-    </div>
-
+      </div>
     </form>
   );
-};
+}
 
-export default Instructions;
+export default Instructions

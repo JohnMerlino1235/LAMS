@@ -8,22 +8,17 @@ import { useParams } from 'react-router-dom';
 import './css/hamburger-menu.css';
 import HamburgerMenu from './HamburgerMenu';
 
-
 function Messages() {
   const params = useParams()
 
+  const formik = useFormik({
+    initialValues: {},
 
-    const formik = useFormik({
-        initialValues: {
-        },
-        
-        //TO-DO
-        onSubmit: values => {
-            console.log({ values });
-        },
-    });
-
-
+    // TO-DO
+    onSubmit: (values) => {
+      console.log({ values });
+    },
+  });
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -33,7 +28,7 @@ function Messages() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
@@ -48,9 +43,8 @@ function Messages() {
       <div className="sheep">
         {/* <img src={messages} className="messages-image" alt="Loading..." /> */}
       </div>
-
     </form>
   );
-};
+}
 
-export default Messages;
+export default Messages

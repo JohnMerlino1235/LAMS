@@ -11,14 +11,13 @@ function HomePage() {
   const formik = useFormik({
     initialValues: {},
 
-    //TO-DO
+    // TO-DO
     onSubmit: (values) => {
       console.log({ values });
     },
   });
 
   const params = useParams()
-
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -28,7 +27,7 @@ function HomePage() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
@@ -49,17 +48,17 @@ function HomePage() {
 
       <div className="buttons-home">
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/instructions">
+          <a className="button-text" href="/instructions">
             Exercise
           </a>
         </button>
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/results">
+          <a className="button-text" href="/results">
             Results
           </a>
         </button>
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/todo">
+          <a className="button-text" href="/todo">
             My Notebook
           </a>
         </button>

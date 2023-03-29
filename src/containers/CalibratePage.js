@@ -3,24 +3,29 @@ import { useFormik } from "formik";
 import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-import './css/hamburger-menu.css'
+import './css/hamburger-menu.css';
 import HamburgerMenu from './HamburgerMenu';
-
+import axios from 'axios';
 
 function Calibrate() {
+  const [comPort, setComPort] = useState("");
+  console.log(comPort);
+  const formik = useFormik({
+    initialValues: {},
 
-
-    const formik = useFormik({
-        initialValues: {
-        },
-        
-        //TO-DO
-        onSubmit: values => {
-            console.log({ values });
-        },
-    });
-
-
+    onSubmit: (values) => {
+      axios
+        .post("http://127.0.0.1:5000//device_pairing")
+        .then((response) => {
+          if (response) {
+            setComPort(response.data.comport_name);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+  })
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -30,7 +35,7 @@ function Calibrate() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
@@ -41,7 +46,7 @@ function Calibrate() {
         <img src={sheep} className="sheep-image" alt="Loading..." />
       </div>
 
-      <div className='title'>
+      <div className="title">
         <h2 className="title-fix">Wait for Calibration...</h2>
       </div>
 
@@ -57,10 +62,9 @@ function Calibrate() {
             Back
           </a>
         </button>
-    </div>
-      
+      </div>
     </form>
   );
-};
+}
 
-export default Calibrate;
+export default Calibrate

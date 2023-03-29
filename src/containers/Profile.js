@@ -3,54 +3,50 @@ import { useFormik } from "formik";
 import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-import { useParams } from 'react-router-dom';
-import './css/hamburger-menu.css';
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from 'react-router-dom';
+import "./css/hamburger-menu.css";
+import axios from 'axios';
 import HamburgerMenu from './HamburgerMenu';
 
 function Profile() {
-
-  let navigate = useNavigate();
+  const navigate = useNavigate()
 
   const params = useParams()
 
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+    },
 
-    const formik = useFormik({
-        initialValues: {
-          name: "",
-          email: "",
-        },
-        
-        onSubmit: (values) => {
-          // console.log({ values });
-          axios
-            .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.email}`, {
-              email: values.email,
-            })
-            .then((response) => console.log(response.data));
+    onSubmit: (values) => {
+      // console.log({ values });
+      axios
+        .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.email}`, {
+          email: values.email,
+        })
+        .then((response) => console.log(response.data));
 
-            axios
-            .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.name}`, {
-              name: values.name,
-            })
-            .then((response) => console.log(response.data));
-            
-        },
-        // {
-        //   axios
-        //     .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.name}`, {
-        //       name: values.name,
-        //     })
-        //     .then((response) => console.log(response.data));
-        // }
-    });
+      axios
+        .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.name}`, {
+          name: values.name,
+        })
+        .then((response) => console.log(response.data));
+    }
+    // {
+    //   axios
+    //     .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.name}`, {
+    //       name: values.name,
+    //     })
+    //     .then((response) => console.log(response.data));
+    // }
+  });
 
-    const [menuDisabled, setMenuDisabled] = useState(true);
+  const [menuDisabled, setMenuDisabled] = useState(true)
 
-    const handleCheckboxChange = (event) => {
-      setMenuDisabled(!event.target.checked);
-    };
+  const handleCheckboxChange = (event) => {
+    setMenuDisabled(!event.target.checked);
+  };
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -60,7 +56,7 @@ function Profile() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
@@ -73,9 +69,7 @@ function Profile() {
       </div>
 
       <div className="profile">
-        <div>
-          Name:
-        </div>
+        <div>Name:</div>
 
         <input
           className="input-box-profile"
@@ -90,9 +84,7 @@ function Profile() {
       </div>
 
       <div className="profile">
-        <div>
-          Email:
-        </div>
+        <div>Email:</div>
 
         <input
           className="input-box-profile"
@@ -107,9 +99,7 @@ function Profile() {
       </div>
 
       <div className="profile">
-        <div>
-          Height:
-        </div>
+        <div>Height:</div>
 
         <input
           className="input-box-profile"
@@ -124,9 +114,7 @@ function Profile() {
       </div>
 
       <div className="profile">
-        <div>
-          Weight:
-        </div>
+        <div>Weight:</div>
 
         <input
           className="input-box-profile"
@@ -142,28 +130,22 @@ function Profile() {
 
       <div className="buttons-home">
         <button className="button-style-home" type="submit">
-          <a class="button-text" href={`/forgot-password/${params.email}`}>
+          <a className="button-text" href={`/forgot-password/${params.email}`}>
             Change Password
           </a>
         </button>
-       </div>
+      </div>
 
-       <div className="buttons-2nd-row">
+      <div className="buttons-2nd-row">
         <button className="button-style" type="submit">
-        <a class="button-text">
-            Cancel
-          </a>
+          <a className="button-text">Cancel</a>
         </button>
         <button className="button-style">
-          <a class="button-text">
-            Save
-          </a>
+          <a className="button-text">Save</a>
         </button>
       </div>
-      
-
     </form>
   );
-};
+}
 
-export default Profile;
+export default Profile

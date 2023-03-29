@@ -20,21 +20,21 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/log-in' element={<Login />} />
-        <Route path='/sign-up' element={<SignUpPage />} />
-        <Route path='/forgot-password' element={<ForgotPasswordPage />} />
-        <Route path='/personal-details' element={<PersonalDetailsPage />} />
-        <Route path='/home-page/:email' element={<HomePage />} />
-        <Route path='/profile/:email' element={<Profile />} />
-        <Route path='/messages/:email' element={<Messages />} />
-        <Route path='/settings-help/:email' element={<SettingsHelp />} />
-        <Route path='/about/:email' element={<About />} />
-        <Route path='/instructions/:email' element={<Instructions />} />
-        <Route path='/calibrate/:email' element={<Calibrate />} />
-        <Route path='/exercise/:email' element={<Exercise />} />
-        <Route path='/notebook/:email' element={<MyNotebook />} />
-        <Route path='/results/:email' element={<Results />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/log-in" element={<Login />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/personal-details" element={<PersonalDetailsPage />} />
+        <Route path="/home-page/:email" element={<HomePage />} />
+        <Route path="/profile/:email" element={<Profile />} />
+        <Route path="/messages/:email" element={<Messages />} />
+        <Route path="/settings-help/:email" element={<SettingsHelp />} />
+        <Route path="/about/:email" element={<About />} />
+        <Route path="/instructions/:email" element={<Instructions />} />
+        <Route path="/calibrate/:email" element={<Calibrate />} />
+        <Route path="/exercise/:email" element={<Exercise />} />
+        <Route path="/notebook/:email" element={<MyNotebook />} />
+        <Route path="/results/:email" element={<Results />} />
       </Routes>
     </BrowserRouter>
   );

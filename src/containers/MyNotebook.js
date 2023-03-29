@@ -3,31 +3,29 @@ import { useFormik } from "formik";
 import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-import './css/hamburger-menu.css'
+import './css/hamburger-menu.css';
 import HamburgerMenu from './HamburgerMenu';
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 function MyNotebook() {
+  const formik = useFormik({
+    initialValues: {
+      notes: "",
+    },
 
+    onSubmit: (values) => {
+      axios
+        .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.notes}`, {
+          notes: values.notes,
+        })
+        .then((response) => console.log(response.data));
+    }
+  });
 
-    const formik = useFormik({
-        initialValues: {
-          notes: ""
-        },
-        
-        onSubmit: values => {
-          axios
-          .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.notes}`, {
-            notes: values.notes,
-          })
-          .then((response) => console.log(response.data));
-        },
-    });
-
-    const [startDate, setStartDate, handleDateSelect, handleDateChange] = useState(new Date());
-
+  const [startDate, setStartDate, handleDateSelect, handleDateChange] =
+    useState(new Date())
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -37,7 +35,7 @@ function MyNotebook() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
@@ -62,7 +60,7 @@ function MyNotebook() {
       </div>
 
       <div className="profile">
-      <textarea
+        <textarea
           className="input-box-notebook"
           id="notes"
           name="notes"
@@ -76,14 +74,11 @@ function MyNotebook() {
 
       <div className="buttons">
         <button className="button-style" type="submit">
-        <a class="button-text">
-            Save
-          </a>
+          <a className="button-text">Save</a>
         </button>
       </div>
-
     </form>
   );
-};
+}
 
-export default MyNotebook;
+export default MyNotebook

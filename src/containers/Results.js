@@ -3,24 +3,18 @@ import { useFormik } from "formik";
 import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-import './css/hamburger-menu.css'
+import './css/hamburger-menu.css';
 import HamburgerMenu from './HamburgerMenu';
 
-
 function Results() {
+  const formik = useFormik({
+    initialValues: {},
 
-
-    const formik = useFormik({
-        initialValues: {
-        },
-        
-        //TO-DO
-        onSubmit: values => {
-            console.log({ values });
-        },
-    });
-
-
+    // TO-DO
+    onSubmit: (values) => {
+      console.log({ values });
+    }
+  });
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -30,12 +24,11 @@ function Results() {
         </Rectangle>
       </div>
 
-      <HamburgerMenu/>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        
       </div>
 
       <div className="sheep">
@@ -45,9 +38,8 @@ function Results() {
       <div className="title">
         <h2 className="title-fix">Results</h2>
       </div>
-
     </form>
   );
-};
+}
 
-export default Results;
+export default Results

@@ -2,19 +2,36 @@ import { useFormik } from "formik";
 import Rectangle from "react-rectangle";
 import "./global.css";
 import sheep from "./sheep.gif";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ForgotPasswordPage() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       email: "",
+      oldPassword: "",
       newPassword: "",
-      newPasswordAgain: "",
     },
 
     onSubmit: (values) => {
-      console.log({ values });
+      axios
+        .post("http://127.0.0.1:5000//changepassword", {
+          email: values.email,
+          old_password: values.oldPassword,
+          new_password: values.newPassword
+        })
+        .then((response) => {
+          if (response.data.success) {
+            navigate("/log-in");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        })
     },
-  });
+  })
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -48,6 +65,17 @@ function ForgotPasswordPage() {
 
         <input
           className="input-box"
+          id="oldPassword"
+          name="oldPassword"
+          type="oldPassword"
+          onChange={formik.handleChange}
+          value={formik.values.oldPassword}
+          placeholder="Old Password"
+          required
+        />
+
+        <input
+          className="input-box"
           id="newPassword"
           name="newPassword"
           type="newPassword"
@@ -56,33 +84,19 @@ function ForgotPasswordPage() {
           placeholder="New Password"
           required
         />
-
-        <input
-          className="input-box"
-          id="newPasswordAgain"
-          name="newPasswordAgain"
-          type="newPasswordAgain"
-          onChange={formik.handleChange}
-          value={formik.values.newPasswordAgain}
-          placeholder="Confirm New Password"
-          required
-        />
       </div>
 
       <div className="buttons">
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
-            Change Password
-          </a>
+          Change Password
         </button>
 
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
+          <a className="button-text" href="/log-in">
             Cancel
           </a>
         </button>
       </div>
-
     </form>
   );
 }
