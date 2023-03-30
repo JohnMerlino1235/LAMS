@@ -32,7 +32,7 @@ function App() {
         <Route path="/about/:email" element={<About />} />
         <Route path="/instructions/:email" element={<Instructions />} />
         <Route path="/calibrate/:email" element={<Calibrate />} />
-        <Route path="/exercise/:email" element={<Exercise />} />
+        <Route path="/exercise/:email/:comPort" element={<Exercise />} />
         <Route path="/notebook/:email" element={<MyNotebook />} />
         <Route path="/results/:email" element={<Results />} />
       </Routes>

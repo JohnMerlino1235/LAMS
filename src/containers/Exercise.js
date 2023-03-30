@@ -10,15 +10,17 @@ import axios from 'axios';
 
 function Exercise() {
   const params = useParams();
+  console.log(params);
 
   const formik = useFormik({
     initialValues: {},
 
     // TO-DO
     onSubmit: (values) => {
+      console.log(params);
       axios
         .post("http://127.0.0.1:5000//read_data", {
-          com_port: params.com_port,
+          com_port: params.comPort,
         })
         .then((response) => {
           if (response) {
@@ -54,6 +56,9 @@ function Exercise() {
       <div className="title">
         <h2 className="title-fix">Exercise</h2>
       </div>
+      <button type="submit">
+        Click to start exercise
+      </button>
     </form>
   );
 }

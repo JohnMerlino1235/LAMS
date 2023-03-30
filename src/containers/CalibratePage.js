@@ -6,10 +6,11 @@ import sheep from './sheep.gif';
 import './css/hamburger-menu.css';
 import HamburgerMenu from './HamburgerMenu';
 import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Calibrate() {
-  const [comPort, setComPort] = useState("");
-  console.log(comPort);
+  const params = useParams();
+  let navigate = useNavigate();
   const formik = useFormik({
     initialValues: {},
 
@@ -17,8 +18,8 @@ function Calibrate() {
       axios
         .post("http://127.0.0.1:5000//device_pairing")
         .then((response) => {
-          if (response) {
-            setComPort(response.data.comport_name);
+          if (response.data.success) {
+            navigate(`/exercise/${params.email}/${response.data.comport_name}`);
           }
         })
         .catch((error) => {
