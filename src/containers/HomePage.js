@@ -1,23 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import { useFormik } from "formik";
-import './css/home-page.css';
-import Rectangle from 'react-rectangle';
-import sheep from './sheep.gif';
-import './css/hamburger-menu.css'
-
+import "./css/home-page.css";
+import Rectangle from "react-rectangle";
+import sheep from "./sheep.gif";
+import "./css/hamburger-menu.css";
+import { useParams } from 'react-router-dom';
+import HamburgerMenu from "./HamburgerMenu";
 
 function HomePage() {
+  const formik = useFormik({
+    initialValues: {},
 
+    // TO-DO
+    onSubmit: (values) => {
+      console.log({ values });
+    },
+  });
 
-    const formik = useFormik({
-        initialValues: {
-        },
-        
-        //TO-DO
-        onSubmit: values => {
-            console.log({ values });
-        },
-    });
+  const params = useParams()
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -27,26 +27,12 @@ function HomePage() {
         </Rectangle>
       </div>
 
-      <nav className="hamburgerMenu" role="navigation">
-        <div id="menuToggle">
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-            <a href="home-page"><li>Home</li></a>
-                <a href="profile"><li>Profile</li></a>
-                <a href="messages"><li>Messages</li></a>
-                <a href="settings-help"><li>Settings/Help</li></a>
-                <a href="about"><li>About</li></a>
-            </ul>
-        </div>
-      </nav>
+      <HamburgerMenu />
 
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">Home-Page</h2>
+        <h2 className="title-fix">Home</h2>
       </div>
 
       <div className="sheep">
@@ -55,30 +41,30 @@ function HomePage() {
 
       <div className="welcome-message">
         <p className="welcome-text">
-            Welcome Back! <br></br>
-            You still have exercises to do today...
+          Welcome Back {params.email}! <br></br>
+          You still have exercises to do today...
         </p>
       </div>
-      
+
       <div className="buttons-home">
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/log-in">
+          <a className="button-text" href="/instructions">
             Exercise
           </a>
         </button>
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/log-in">
+          <a className="button-text" href="/results">
             Results
           </a>
         </button>
         <button className="button-style-home" type="submit">
-          <a class="button-text" href="/log-in">
-            To-Do &amp; Journal
+          <a className="button-text" href="/todo">
+            My Notebook
           </a>
         </button>
       </div>
     </form>
   );
-};
+}
 
 export default HomePage;

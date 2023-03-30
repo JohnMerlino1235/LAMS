@@ -3,8 +3,11 @@ import axios from "axios";
 import "./global.css";
 import Rectangle from "react-rectangle";
 import sheep from "./sheep.gif";
+import { useNavigate } from "react-router-dom";
+import HamburgerMenu from "./HamburgerMenu";
 
 function Login() {
+  const navigate = useNavigate()
 
   const formik = useFormik({
     initialValues: {
@@ -13,15 +16,21 @@ function Login() {
     },
 
     onSubmit: (values) => {
-      // console.log({ values });
       axios
-        .post(`http://127.0.0.1:5000//fetch_user_from_db/${values.email}`, {
+        .post("http://127.0.0.1:5000//login", {
           email: values.email,
+          password: values.password
         })
-        .then((response) => console.log(response.data));
+        .then((response) => {
+          if (response.data.success) {
+            navigate(`/home-page/${values.email}`);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        })
     },
-
-  });
+  })
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
       <div className="ellipses">
@@ -74,26 +83,21 @@ function Login() {
 
       <div className="buttons">
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
-            Login
-          </a>
+          Login
         </button>
       </div>
 
       <div className="buttons-2nd-row">
-        <button className="button-style" type="submit">
-          <a class="button-text" href="/sign-up">
-            Sign-Up
-          </a>
+        <button className="button-style" onClick={() => navigate("/sign-up")}>
+          Sign-Up
         </button>
-
-        <button className="button-style" type="submit">
-          <a class="button-text" href="/forgot-password">
-            Forgot Password?
-          </a>
+        <button
+          className="button-style"
+          onClick={() => navigate('/forgot-password')}
+        >
+          <a className="button-text">Forgot Password?</a>
         </button>
       </div>
-
     </form>
   );
 }

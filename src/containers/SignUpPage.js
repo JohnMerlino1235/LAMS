@@ -3,25 +3,38 @@ import { useFormik } from "formik";
 import './global.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SignUpPage() {
+  const navigate = useNavigate();
 
-    const formik = useFormik({
-        initialValues: {
-            email: '',
-            password: '',
-            firstName: '',
-            lastName: '',
-            height: '',
-            weight: '',
-            targetArea: ''
-        },
-        //TO-DO
-        onSubmit: values => {
-            console.log({ values });
-        },
-    });
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+    },
+
+    onSubmit: (values) => {
+      axios
+        .post("http://127.0.0.1:5000//signup", {
+          email: values.email,
+          password: values.password,
+          first_name: values.firstName,
+          last_name: values.lastName,
+        })
+        .then((response) => {
+          if (response.data.success) {
+            navigate("/log-in");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    },
+  })
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -83,21 +96,18 @@ function SignUpPage() {
           required
         />
       </div>
-      
+
       <div className="buttons">
         <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
-            Create Account
-          </a>
+          Create Account
         </button>
-        <button className="button-style" type="submit">
-          <a class="button-text" href="/log-in">
-            Cancel
-          </a>
-        </button>
+        <button
+          className="button-style"
+          onClick={() => navigate('/log-in')}
+        ></button>
       </div>
     </form>
   );
-};
+}
 
-export default SignUpPage;
+export default SignUpPage

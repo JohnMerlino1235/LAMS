@@ -4,12 +4,9 @@ import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
 import './css/hamburger-menu.css';
-import { useParams } from 'react-router-dom';
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from './HamburgerMenu';
 
-function About() {
-  const params = useParams();
-
+function Instructions() {
   const formik = useFormik({
     initialValues: {},
 
@@ -32,14 +29,33 @@ function About() {
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">About</h2>
       </div>
 
       <div className="sheep">
         <img src={sheep} className="sheep-image" alt="Loading..." />
       </div>
+
+      <div className="title">
+        <h2 className="title-fix">Learn To Properly Attach Device</h2>
+      </div>
+
+      <div className="welcome-message">
+        <p className="welcome-text">
+          Instructions: <br></br>
+          1. <br></br>
+          2.
+        </p>
+      </div>
+
+      <div className="buttons-home">
+        <button className="button-style-home" type="submit">
+          <a className="button-text" href="/calibrate">
+            Calibrate
+          </a>
+        </button>
+      </div>
     </form>
   );
 }
 
-export default About
+export default Instructions
