@@ -23,9 +23,25 @@ function Exercise() {
           com_port: params.comPort,
         })
         .then((response) => {
+          console.log(response);
           if (response) {
             // this is the data from the device
             console.log(response);
+            axios
+            .post("http://127.0.0.1:5000//data_filter", {
+              data_list: response.data.data,
+            })
+            .then((response) => {
+              console.log(response);
+
+              if (response) {
+                // this is the data from the device
+                console.log(response);
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            })
           }
         })
         .catch((error) => {
