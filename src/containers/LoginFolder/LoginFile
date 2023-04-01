@@ -4,35 +4,9 @@ import "./global.css";
 import Rectangle from "react-rectangle";
 import sheep from "./sheep.gif";
 import { useNavigate } from "react-router-dom";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "../Hamburger Menu/HamburgerMenu";
 
-function Login() {
-  const navigate = useNavigate()
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-
-    onSubmit: (values) => {
-      axios
-        .post("http://127.0.0.1:5000//login", {
-          email: values.email,
-          password: values.password
-        })
-        .then((response) => {
-          if (response.data.success) {
-            navigate(`/home-page/${values.email}`);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    },
-  })
-  return (
-    <form className="root-syle" onSubmit={formik.handleSubmit}>
+<form className="root-syle" onSubmit={formik.handleSubmit}>
       <div className="ellipses">
         <Rectangle className="ellipse-blue">
           <Rectangle className="ellipse-red"></Rectangle>
@@ -99,7 +73,3 @@ function Login() {
         </button>
       </div>
     </form>
-  );
-}
-
-export default Login;

@@ -4,19 +4,16 @@ import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
 import './css/hamburger-menu.css';
-import { useParams } from 'react-router-dom';
-import HamburgerMenu from './HamburgerMenu';
+import HamburgerMenu from '../Hamburger Menu/HamburgerMenu';
 
-function SettingsHelp() {
-  const params = useParams()
-
+function Results() {
   const formik = useFormik({
     initialValues: {},
 
     // TO-DO
     onSubmit: (values) => {
       console.log({ values });
-    },
+    }
   });
 
   return (
@@ -32,14 +29,17 @@ function SettingsHelp() {
       <div className="title">
         <h1>LAMS</h1>
         <p className="title-fix">Leg Activity Monitoring System</p>
-        <h2 className="title-fix">Settings</h2>
       </div>
 
       <div className="sheep">
         <img src={sheep} className="sheep-image" alt="Loading..." />
       </div>
+
+      <div className="title">
+        <h2 className="title-fix">Results</h2>
+      </div>
     </form>
   );
 }
 
-export default SettingsHelp
+export default Results

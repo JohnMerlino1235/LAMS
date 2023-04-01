@@ -6,7 +6,7 @@ import sheep from './sheep.gif';
 import { useParams, useNavigate } from 'react-router-dom';
 import "./css/hamburger-menu.css";
 import axios from 'axios';
-import HamburgerMenu from './HamburgerMenu';
+import HamburgerMenu from '../Hamburger Menu/HamburgerMenu';
 
 function Profile() {
   const navigate = useNavigate()

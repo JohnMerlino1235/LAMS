@@ -4,7 +4,7 @@ import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
 import './css/hamburger-menu.css';
-import HamburgerMenu from './HamburgerMenu';
+import HamburgerMenu from '../HamburgerMenuFolder/HamburgerMenu';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 

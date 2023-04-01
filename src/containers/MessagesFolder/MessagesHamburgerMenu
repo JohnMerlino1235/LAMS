@@ -1,0 +1,18 @@
+import './css/hamburger-menu.css';
+import HamburgerMenu from '../Hamburger Menu/HamburgerMenu';
+
+<HamburgerMenu />
+
+      <div className="title">
+        <h1>LAMS</h1>
+        <p className="title-fix">Leg Activity Monitoring System</p>
+        <h2 className="title-fix">Messages</h2>
+      </div>
+
+      <div className="sheep">
+        <img src={sheep} className="sheep-image" alt="Loading..." />
+      </div>
+
+      <div className="sheep">
+        {/* <img src={messages} className="messages-image" alt="Loading..." /> */}
+      </div>

@@ -1,0 +1,15 @@
+import { useFormik } from "formik";
+import Rectangle from "react-rectangle";
+import "./global.css";
+import sheep from "./sheep.gif";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+Function
+
+<form className="root-syle" onSubmit={formik.handleSubmit}>
+      <div className="ellipses">
+        <Rectangle className="ellipse-blue">
+          <Rectangle className="ellipse-red"></Rectangle>
+        </Rectangle>
+      </div>

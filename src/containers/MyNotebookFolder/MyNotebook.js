@@ -4,7 +4,7 @@ import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
 import './css/hamburger-menu.css';
-import HamburgerMenu from './HamburgerMenu';
+import HamburgerMenu from '../Hamburger Menu/HamburgerMenu';
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

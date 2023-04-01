@@ -4,35 +4,17 @@ import './css/home-page.css';
 import Rectangle from 'react-rectangle';
 import sheep from './sheep.gif';
 import './css/hamburger-menu.css';
-import HamburgerMenu from './HamburgerMenu';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import HamburgerMenu from '../Hamburger Menu/HamburgerMenu';
 
-function Exercise() {
-  const params = useParams();
-  console.log(params);
-
+function Instructions() {
   const formik = useFormik({
     initialValues: {},
 
     // TO-DO
     onSubmit: (values) => {
-      console.log(params);
-      axios
-        .post("http://127.0.0.1:5000//read_data", {
-          com_port: params.comPort,
-        })
-        .then((response) => {
-          if (response) {
-            // this is the data from the device
-            console.log(response);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        })
+      console.log({ values });
     },
-  })
+  });
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
@@ -54,13 +36,26 @@ function Exercise() {
       </div>
 
       <div className="title">
-        <h2 className="title-fix">Exercise</h2>
+        <h2 className="title-fix">Learn To Properly Attach Device</h2>
       </div>
-      <button type="submit">
-        Click to start exercise
-      </button>
+
+      <div className="welcome-message">
+        <p className="welcome-text">
+          Instructions: <br></br>
+          1. <br></br>
+          2.
+        </p>
+      </div>
+
+      <div className="buttons-home">
+        <button className="button-style-home" type="submit">
+          <a className="button-text" href="/calibrate">
+            Calibrate
+          </a>
+        </button>
+      </div>
     </form>
   );
 }
 
-export default Exercise
+export default Instructions

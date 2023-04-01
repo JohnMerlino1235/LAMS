@@ -6,7 +6,7 @@ import sheep from './sheep.gif';
 import { useParams } from 'react-router-dom';
 // import messages from './assets/messages.png';
 import './css/hamburger-menu.css';
-import HamburgerMenu from './HamburgerMenu';
+import HamburgerMenu from '../Hamburger Menu/HamburgerMenu';
 
 function Messages() {
   const params = useParams()
