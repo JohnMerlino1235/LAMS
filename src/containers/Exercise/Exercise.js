@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useFormik } from "formik";
-import './css/home-page.css';
-import Rectangle from 'react-rectangle';
-import sheep from './sheep.gif';
-import './css/hamburger-menu.css';
-import HamburgerMenu from './HamburgerMenu';
+
+
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import HamburgerMenu from '../shared/HamburgerMenu';
+import Ellipses from "../shared/Ellipses";
+import Header from '../shared/Header';
+import TextExercise from './TextExercise';
+import ButtonsExercise from './ButtonsExercise';
+
 
 function Exercise() {
   const params = useParams();
@@ -52,29 +55,16 @@ function Exercise() {
 
   return (
     <form className="root-syle" onSubmit={formik.handleSubmit}>
-      <div className="ellipses">
-        <Rectangle className="ellipse-blue">
-          <Rectangle className="ellipse-red"></Rectangle>
-        </Rectangle>
-      </div>
+      <Ellipses/>
 
       <HamburgerMenu />
 
-      <div className="title">
-        <h1>LAMS</h1>
-        <p className="title-fix">Leg Activity Monitoring System</p>
-      </div>
+      <Header/>
 
-      <div className="sheep">
-        <img src={sheep} className="sheep-image" alt="Loading..." />
-      </div>
+      <TextExercise/>
 
-      <div className="title">
-        <h2 className="title-fix">Exercise</h2>
-      </div>
-      <button type="submit">
-        Click to start exercise
-      </button>
+      <ButtonsExercise/>
+     
     </form>
   );
 }
