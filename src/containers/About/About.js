@@ -24,7 +24,7 @@ function About() {
 
       <HamburgerMenu/>
 
-      <Header/>
+      <Header headerName={'About'}/>
 
     </form>
   );

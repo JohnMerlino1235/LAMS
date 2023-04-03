@@ -25,7 +25,7 @@ function Instructions() {
 
       <HamburgerMenu />
 
-      <Header/>
+      <Header headerName={"Text Instructions"}/>
 
       <TextInstructions/>
 

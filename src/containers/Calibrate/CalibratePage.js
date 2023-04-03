@@ -39,7 +39,7 @@ function Calibrate() {
 
       <HamburgerMenu/>
 
-      <Header/>
+      <Header headerName={'Calibrate'}/>
 
       <TextCalibrate/>
 

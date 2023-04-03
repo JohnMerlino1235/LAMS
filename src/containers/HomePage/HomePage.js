@@ -27,9 +27,7 @@ function HomePage() {
 
       <HamburgerMenu />
 
-      <Header/>
-
-      <TextHomePage/>
+      <Header headerName={'ForgotPassword'}/>
 
       <ButtonsHomePage/>
 
