@@ -5,6 +5,7 @@ import Ellipses from "../shared/Ellipses";
 import Header from "../shared/Header";
 import InputsLogin from "./InputsLogin";
 import ButtonsLogin from "./ButtonsLogin";
+import TextLogin from "./TextLogin";
 
 function Login() {
 
@@ -40,6 +41,8 @@ function Login() {
 
       <Header/>
 
+      <TextLogin/>
+    
       <InputsLogin/>
 
       <ButtonsLogin/>
