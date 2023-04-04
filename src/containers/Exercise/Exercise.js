@@ -59,8 +59,6 @@ function Exercise() {
 
       <HamburgerMenu />
 
-      <Header/>
-
       <TextExercise/>
 
       <ButtonsExercise/>

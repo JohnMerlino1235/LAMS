@@ -1,34 +1,23 @@
-import { useParams } from 'react-router-dom';
-import { useFormik } from "formik";
+import { useNavigate, useParams } from 'react-router-dom';
 
-
-
-function ButtonsHomePage() {
-    const formik = useFormik({
-        initialValues: {},
-    
-        // TO-DO
-        onSubmit: (values) => {
-          console.log({ values });
-        },
-      });
-    
+function ButtonsHomePage() {    
       const params = useParams()
+      const navigate = useNavigate();
 
     return(
         <div className="buttons-home">
-        <button className="button-style-home" type="submit">
-          <a class="button-text" href={`/instructions/${params.email}`}>
+        <button className="button-style-home" onClick={() => navigate(`/instructions/${params.email}`)}>
+          <a class="button-text">
             Exercise
           </a>
         </button>
-        <button className="button-style-home" type="submit">
-          <a class="button-text" href={`/results/${params.email}`}>
+        <button className="button-style-home" onClick={() => navigate(`/results/${params.email}`)}>
+          <a class="button-text">
             Results
           </a>
         </button>
-        <button className="button-style-home" type="submit">
-          <a class="button-text" href={`/notebook/${params.email}`}>
+        <button className="button-style-home" onClick={() => navigate(`/notebook/${params.email}`)}>
+          <a class="button-text">
             My Notebook
           </a>
         </button>

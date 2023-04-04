@@ -6,32 +6,23 @@ import Ellipses from "../shared/Ellipses";
 import Header from "../shared/Header";
 import TextHomePage from "./TextHomePage";
 import ButtonsHomePage from "./ButtonsHomePage";
+import Sheep from "../shared/sheep";
 
 
 function HomePage() {
-  const formik = useFormik({
-    initialValues: {},
-
-    // TO-DO
-    onSubmit: (values) => {
-      console.log({ values });
-    },
-  });
-
-  const params = useParams()
 
   return (
-    <form className="root-syle" onSubmit={formik.handleSubmit}>
+    <div className="root-syle">
 
       <Ellipses/>
 
       <HamburgerMenu />
-
-      <Header headerName={'ForgotPassword'}/>
+      
+      <TextHomePage/>
 
       <ButtonsHomePage/>
 
-    </form>
+    </div>
   );
 }
 

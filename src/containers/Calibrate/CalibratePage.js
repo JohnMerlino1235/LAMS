@@ -12,8 +12,6 @@ import axios from "axios";
 
 
 function Calibrate() {
-
-
   const params = useParams();
   let navigate = useNavigate();
   const formik = useFormik({

@@ -80,7 +80,7 @@
 }
 
 .sheep {
-    margin-top: -15%;
+    margin-top: 20%;
     margin-bottom: -15%;
     display: flex;
     justify-content: center;
@@ -100,15 +100,36 @@
     margin-left: 6%;
     margin-right: 6%;
     text-align: center;
-    margin-top: 2%;
+    margin-top: 55%;
     border-radius: 15px;
 
 }
 
+.calibration-instructions-message {
+    background-color: lightblue;
+    /* border-radius:2%; */
+
+    padding: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
+    text-align: center;
+    margin-top: 20%;
+    border-radius: 15px;
+}
 .welcome-text {
     text-decoration: none;
     color: black;
     font-size: 20px;
+}
+
+.instructions-header {
+    text-align: center;
+}
+.instructions-text {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    text-align: left;
 }
 
 .buttons-home {
@@ -126,7 +147,7 @@
     background: rgba(0, 148, 255, 0.25);
     border-radius: 15px;
     margin-right: 1%;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 .button-text {

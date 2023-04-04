@@ -18,6 +18,8 @@ import Results from './containers/Results/Results';
 import "./containers/css/global.css";
 import "./containers/css/home-page.css";
 import "./containers/css/hamburger-menu.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
         <Route path="/notebook/:email" element={<MyNotebook />} />
         <Route path="/results/:email" element={<Results />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }

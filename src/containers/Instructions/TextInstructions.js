@@ -1,16 +1,33 @@
 
 function TextInstructions() {
     return(
-        <div>
+      <div>
         <div className="title">
-        <h2 className="title-fix">Learn To Properly Attach Device</h2>
-      </div>
+          <h2 className="title-fix">Lets get started Calibrating!</h2>
+        </div>
 
-      <div className="welcome-message">
-        <p className="welcome-text">
-          Instructions: <br></br>
-          1. <br></br>
-          2.
+      <div className="calibration-instructions-message">
+        <p className="instructions-text">
+          <h2 className="instructions-header">
+            Instructions
+          </h2>
+          <ol>
+            <li>
+              Place the sleeve on your leg
+            </li>
+            <li>
+              Press Calibrate button
+            </li>
+            <li>
+              Plug USB into Computer
+            </li>
+            <li>
+              Wait for success message!
+            </li>
+            <li>
+              Click Exercise button
+            </li>
+          </ol>
         </p>
       </div>
       </div>
