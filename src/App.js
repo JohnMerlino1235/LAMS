@@ -18,12 +18,13 @@ import Results from './containers/Results/Results';
 import "./containers/css/global.css";
 import "./containers/css/home-page.css";
 import "./containers/css/hamburger-menu.css";
+import TestImageComponent from './containers/Login/testImageComp';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<TestImageComponent />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
