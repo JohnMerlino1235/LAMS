@@ -6,36 +6,14 @@ import Header from "../shared/Header";
 import InputsLogin from "./InputsLogin";
 import ButtonsLogin from "./ButtonsLogin";
 import TextLogin from "./TextLogin";
+import LoginForm from "./LoginForm";
 
 function Login() {
 
   const navigate = useNavigate();
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-
-    onSubmit: (values) => {
-        axios
-          .post("http://127.0.0.1:5000//login", {
-            email: values.email,
-            password: values.password
-          })
-          .then((response) => {
-            if (response.data.success) {
-              navigate(`/home-page/${values.email}`);
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-      },
-  });
-
   return (
-    <form className="root-syle" onSubmit={formik.handleSubmit}>
+    <div className="root-syle">
 
       <Ellipses/>
 
@@ -43,11 +21,8 @@ function Login() {
 
       <TextLogin/>
     
-      <InputsLogin/>
-
-      <ButtonsLogin/>
-
-    </form>
+      <LoginForm />
+    </div>
   );
 }
 
