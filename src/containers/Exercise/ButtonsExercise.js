@@ -17,7 +17,7 @@ function ButtonsExercise() {
     axios.post("http://127.0.0.1:5000//read_data", {
       com_port: params.comPort,
     }).then((response) => {
-      if (response.success) {
+      if (response.data.success) {
         toast.success('Data received! Filtering data...you can stop exercising', {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 3000,
@@ -31,7 +31,7 @@ function ButtonsExercise() {
           data_list: response.data.data,
           email: params.email,
         }).then((response) => {
-          if (response.success) {
+          if (response.data.success) {
             setShowResultsButton(true);
             toast.success('Data filtered!', {
               position: toast.POSITION.TOP_CENTER,
