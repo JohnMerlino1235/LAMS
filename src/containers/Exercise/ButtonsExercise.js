@@ -18,7 +18,7 @@ function ButtonsExercise() {
       com_port: params.comPort,
     }).then((response) => {
       if (response.success) {
-        toast.positive('Data received! Filtering data...you can stop exercising', {
+        toast.success('Data received! Filtering data...you can stop exercising', {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 3000,
           hideProgressBar: true,
@@ -33,7 +33,7 @@ function ButtonsExercise() {
         }).then((response) => {
           if (response.success) {
             setShowResultsButton(true);
-            toast.positive('Data filtered!', {
+            toast.success('Data filtered!', {
               position: toast.POSITION.TOP_CENTER,
               autoClose: 3000,
               hideProgressBar: true,

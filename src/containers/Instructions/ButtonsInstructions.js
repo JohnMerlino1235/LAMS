@@ -13,7 +13,7 @@ function ButtonsInstructons() {
     axios.post("http://127.0.0.1:5000//device_pairing").then((response) => {
       if (response.data.success) {
         setComport(response.data.comport_name);
-        toast.positive('Device paired!', {
+        toast.success('Device paired!', {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 3000,
           hideProgressBar: true,
