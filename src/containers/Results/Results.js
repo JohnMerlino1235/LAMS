@@ -4,19 +4,14 @@ import HamburgerMenu from '../shared/HamburgerMenu';
 import Ellipses from "../shared/Ellipses";
 import Header from '../shared/Header';
 import TextResults from './TextResults';
+import { useParams } from 'react-router-dom';
+import UserResults from './UserResults';
 
 function Results() {
-  const formik = useFormik({
-    initialValues: {},
-
-    // TO-DO
-    onSubmit: (values) => {
-      console.log({ values });
-    }
-  });
+  const params  = useParams();
 
   return (
-    <form className="root-syle" onSubmit={formik.handleSubmit}>
+    <div className="root-syle">
       <Ellipses/>
 
       <HamburgerMenu />
@@ -24,7 +19,9 @@ function Results() {
       <Header/>
 
       <TextResults/>
-    </form>
+
+      <UserResults />
+    </div>
   );
 }
 
