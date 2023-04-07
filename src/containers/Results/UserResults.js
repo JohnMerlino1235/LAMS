@@ -5,19 +5,17 @@ import { toast } from 'react-toastify';
 
 function UserResults() {
   const params = useParams()
-  const [imageUrl, setImageUrl] = useState();
+  const [imageUrl, setImageUrl] = useState('');
 
   const getImage = () => {
     axios.post('http://127.0.0.1:5000//get_data', {email: params.email})
     .then(response => {
       if (response.data.success) {
-        axios.post('http://127.0.0.1:5000//get_image', { responseType: 'blob' })
+        axios.post(`http://127.0.0.1:5000//get_image/${params.email}`, { responseType: 'blob', })
         .then(response => {
-          console.log('response from imageURL', response);
-          const file = new Blob([response.data], { type: 'image/png' });
-          const imageUrl = URL.createObjectURL(file);
-          setImageUrl(imageUrl);
-          console.log(imageUrl);
+            const imageUrl = URL.createObjectURL(response.data);
+            setImageUrl(imageUrl);
+            console.log(imageUrl);
           toast.success('Results generated!', {
               position: toast.POSITION.TOP_CENTER,
               autoClose: 3000,
