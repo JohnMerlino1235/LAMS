@@ -5,7 +5,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
+import exercise from './exercise.mp4';
+import linkLight from './linkLight.jpg';
+import timer from './timer.gif';
 // import Step1 from './images/step1.png';
 // import Step2 from './images/step2.png';
 // import Step3 from './images/step3.png';
@@ -14,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 
 function ExerciseComponent() {
     const [step, setStep] = useState(1);
-    const maxStep = 5;
+    const maxStep = 6;
     const [showExerciseButton, setShowExerciseButton] = useState(false);
     const [showResultsButton, setShowResultsButton] = useState(false);
     const [comPort, setComport] = useState('');
@@ -22,9 +24,9 @@ function ExerciseComponent() {
     const navigate = useNavigate();  
 
     useEffect(() => {
-        if (step === 2) {
+        if (step === 3) {
             setShowExerciseButton(true);
-        } else if(step === 5) {
+        } else if(step === 6) {
             setShowResultsButton(true);
         } else {
             setShowResultsButton(false);
@@ -37,13 +39,7 @@ function ExerciseComponent() {
     }
   
     function handleNextClick() {
-      const nextStep = Math.min(step + 1, maxStep);
-      if (nextStep === 3 && !comPort) {
-        setComport('COM5');
-        // do nothing
-      } else {
-        setStep(Math.min(step + 1, maxStep));
-      }
+      setStep(Math.min(step + 1, maxStep));
     }
 
     function handleStartExercise() {
@@ -126,18 +122,21 @@ function ExerciseComponent() {
     }
 
     const stepList = [
-        {text: "Familiarize yourself with the above exercise", img: ""}, 
-        {text: "Click Start Exercise button", img: ""}, 
-        {text: "Begin Exercising for 30 seconds", img: ""}, 
-        {text: "Wait for success message", img: ""},
-        {text: "Click View Results button", img:""}]
+        {text: "Familiarize yourself with the above exercise", img: exercise}, 
+        {text: "Wait for Link light to show up on sleeve", img: linkLight}, 
+        {text: "Click Start Exercise button", img: exercise}, 
+        {text: "Begin Exercising for 30 seconds", img: timer}, 
+        {text: "Wait for success message", img: exercise},
+        {text: "Click View Results button", img: exercise}]
   
-    const progressBarFillWidth = `${(step / 5) * 100}%`;
+    const progressBarFillWidth = `${(step / 6) * 100}%`;
     return (
       <div className="instructions-page">
         <h2 className='instructions-page-header'>Exercise Steps</h2>
         <div className="step-image">
-          <img src={`step-${step}.png`} alt={`Step ${step}`} />
+          {step === 2 || step === 4 ? <img src={stepList[step-1].img} alt={`Hello ${step}`} /> : 
+          <video src={stepList[step-1].img} width="80%" height="325" controls />}
+                                
         </div>
         <div className="step-text">
           <p>{stepList[step-1].text}</p>
@@ -152,9 +151,9 @@ function ExerciseComponent() {
           </button>
             }
             <a className='step-number-text'>
-            {`Step ${step} of 5`}
+            {`Step ${step} of 6`}
             </a>
-            {step < 5 && 
+            {step < 6 && 
           <button
             className="next-button"
             onClick={handleNextClick}

@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment/moment';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const HomeScreen = () => {
   const days = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
-//   const completedDays = ['M', 'W', 'F']; // This could be an array of the days that have been completed
+  // const completedDays = ['M', 'W', 'F']; // This could be an array of the days that have been completed
   const [completedDays, setCompletedDays] = useState([]);
   const params = useParams();
 
@@ -22,7 +23,7 @@ const HomeScreen = () => {
         const endOfWeek = moment().endOf('week').isoWeekday(7);
         // filter the dates to only those that fall within the current week
         // Filter the dates to only include those in the current week
-        const currentWeekDates = data.filter((date) => {
+        const currentWeekDates = response.data.dates_recorded.filter((date) => {
             const momentDate = moment(date);
             return momentDate.isSameOrAfter(startOfWeek) && momentDate.isSameOrBefore(endOfWeek);
         });
