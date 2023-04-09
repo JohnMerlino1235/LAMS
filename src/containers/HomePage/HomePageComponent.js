@@ -7,8 +7,6 @@ const HomeScreen = () => {
   const days = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
 //   const completedDays = ['M', 'W', 'F']; // This could be an array of the days that have been completed
   const [completedDays, setCompletedDays] = useState([]);
-  const [startOfWeek, setStartOfWeek] = useState();
-  const [endOfWeek, setEndOfWeek] = useState();
 
   useEffect(() => {
     const today = new Date();
