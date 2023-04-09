@@ -6,12 +6,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-// import Step1 from './images/step1.png';
-// import Step2 from './images/step2.png';
-// import Step3 from './images/step3.png';
-// import Step4 from './images/step4.png';
-// import Step5 from './images/step5.png';
-
 function InstructionsPage() {
     const [step, setStep] = useState(1);
     const maxStep = 5;
@@ -39,7 +33,6 @@ function InstructionsPage() {
     function handleNextClick() {
       const nextStep = Math.min(step + 1, maxStep);
       if (nextStep === 3 && !comPort) {
-        setComport('COM5');
         // do nothing
       } else {
         setStep(Math.min(step + 1, maxStep));
