@@ -1,10 +1,8 @@
-
-
 function ButtonsProfile() {
-    return(
-        <div>
-        <div className="buttons-home">
-        <button className="button-style-home" type="submit">
+  return (
+    <div>
+      <div className="buttons">
+        <button className="button-style-else" type="submit">
           <a className="button-text" href={`/forgot-password`}>
             Change Password
           </a>
@@ -12,15 +10,15 @@ function ButtonsProfile() {
       </div>
 
       <div className="buttons-2nd-row">
-        <button className="button-style" type="submit">
+        <button className="button-style-else" type="submit">
           <a className="button-text">Cancel</a>
         </button>
-        <button className="button-style">
+        <button className="button-style-else">
           <a className="button-text">Save</a>
         </button>
       </div>
-      </div>
-    )
+    </div>
+  );
 }
 
 export default ButtonsProfile;

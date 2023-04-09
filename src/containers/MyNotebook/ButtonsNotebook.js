@@ -18,7 +18,7 @@ function ButtonsNotebook() {
       
     return(
         <div className="buttons">
-        <button className="button-style" type="submit">
+        <button className="button-style-else" type="submit">
           <a className="button-text">Save</a>
         </button>
       </div>

@@ -149,6 +149,17 @@ background: rgba(0, 148, 255, 0.25);}
     margin-top: 10%;
 }
 
+.button-style-else {
+    position: inherit;
+    width: 280px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(0, 76, 132, 0.46) 6.72%, #5999C7 56.72%);    
+    border-radius: 16px;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 3%;
+}
+
 .button-text {
     text-decoration: none;
     color: white;

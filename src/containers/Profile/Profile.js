@@ -46,7 +46,7 @@ function Profile() {
 
       <HamburgerMenu />
 
-      <Header/>
+      <Header headerName={'Profile'}/>
 
       <InputsProfile/>
 

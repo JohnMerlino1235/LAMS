@@ -79,13 +79,13 @@ function SignUpForm() {
     />
   </div>
   <div className="buttons">
-      <button className="button-style" type="submit">
+      <button className="button-style-else" type="submit">
         <a class="button-text">
         Create Account
         </a>
       </button>
       <button
-        className="button-style"
+        className="button-style-else"
         onClick={() => navigate('/log-in')}
       >
         <a class="button-text">
