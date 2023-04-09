@@ -122,7 +122,7 @@ function ExerciseComponent() {
     }
 
     const stepList = [
-        {text: "Familiarize yourself with the above exercise", img: exercise}, 
+        {text: "Watch the above exercise", img: exercise}, 
         {text: "Wait for Link light to show up on sleeve", img: linkLight}, 
         {text: "Click Start Exercise button", img: exercise}, 
         {text: "Begin Exercising for 30 seconds", img: timer}, 
