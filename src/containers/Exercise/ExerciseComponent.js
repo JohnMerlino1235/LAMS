@@ -124,7 +124,6 @@ function ExerciseComponent() {
     function handleViewResults() {
         navigate(`/results/${params.email}`);
     }
-        
 
     const stepList = [
         {text: "Familiarize yourself with the above exercise", img: ""}, 

@@ -5,10 +5,15 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import pluggedInUSB from './pluggedInUSB.jpg';
+import powerBank from './powerBank.png';
+import sleeve from './sleeve.png';
+import unpluggedUSB from './unpluggedUSB.jpg';
+
 
 function InstructionsPage() {
     const [step, setStep] = useState(1);
-    const maxStep = 5;
+    const maxStep = 6;
     const [showCalibrateButton, setShowCalibrateButton] = useState(false);
     const [showExerciseButton, setShowExerciseButton] = useState(false);
     const [comPort, setComport] = useState('');
@@ -16,9 +21,9 @@ function InstructionsPage() {
     const navigate = useNavigate();  
 
     useEffect(() => {
-        if (step === 2) {
+        if (step === 4) {
             setShowCalibrateButton(true);
-        } else if(step === 5) {
+        } else if(step === 6) {
             setShowExerciseButton(true);
         } else {
             setShowCalibrateButton(false);
@@ -32,8 +37,8 @@ function InstructionsPage() {
   
     function handleNextClick() {
       const nextStep = Math.min(step + 1, maxStep);
-      if (nextStep === 3 && !comPort) {
-        // do nothing
+      if (nextStep === 5 && !comPort) {
+        setComport('COM5');
       } else {
         setStep(Math.min(step + 1, maxStep));
       }
@@ -82,18 +87,21 @@ function InstructionsPage() {
     
 
     const stepList = [
-        {text: "Place the sleeve on your leg", img: ""}, 
-        {text: "Press Calibrate button", img: ""}, 
-        {text: "Plug USB into Computer", img: ""},
-        {text: "Wait for success message", img: ""},
-        {text: "Click Exercise button", img:""}]
+        {text: "Place the sleeve on your leg", img: sleeve}, 
+        {text: "Plug in sleeve to power bank", img: powerBank}, 
+        {text: "Make sure USB is unplugged", img: unpluggedUSB}, 
+        {text: "Press Calibrate and plug in USB afterwards", img: pluggedInUSB}, 
+        {text: "Wait for success message", img: sleeve},
+        {text: "Click Exercise button", img: sleeve},         
+      ]
   
-    const progressBarFillWidth = `${(step / 5) * 100}%`;
+    const progressBarFillWidth = `${(step / 6) * 100}%`;
+
     return (
       <div className="instructions-page">
         <h2 className='instructions-page-header'>Calibration Steps</h2>
         <div className="step-image">
-          <img src={`step-${step}.png`} alt={`Step ${step}`} />
+          <img src={`${stepList[step-1].img}`} alt={`Step ${step}`} />
         </div>
         <div className="step-text">
           <p>{stepList[step-1].text}</p>
@@ -108,9 +116,9 @@ function InstructionsPage() {
           </button>
             }
             <a className='step-number-text'>
-            {`Step ${step} of 5`}
+            {`Step ${step} of 6`}
             </a>
-            {step < 5 && 
+            {step < 6 && 
           <button
             className="next-button"
             onClick={handleNextClick}

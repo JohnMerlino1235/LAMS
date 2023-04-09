@@ -123,9 +123,9 @@
   }
   
   .step-image img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    max-width: 80%;
+    height: 325px;
+    margin-left: 15%;
   }
   
   .step-text {
@@ -135,6 +135,7 @@
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
+    margin-left: 25px;
   }
   
   .step-navigation {
@@ -153,7 +154,7 @@
     font-size: 16px;
     cursor: pointer;
     position: absolute;
-
+    margin-left: 15px;
   }
 
   .next-button {
@@ -165,11 +166,12 @@
     font-size: 16px;
     cursor: pointer;
     position: absolute;
-    margin-left: 255px;
+    margin-left: 290px;
   }
 
   .instructions-page-header {
     margin-top: 100px;
+    margin-left: 35px;
   }
 
   .step-number-text {
@@ -183,6 +185,7 @@
     background-color: #e6e6e6;
     border-radius: 10px;
     margin-top: 25px;
+    margin-left: 25px;
   }
   
   .progress-bar-fill {
