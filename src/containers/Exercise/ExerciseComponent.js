@@ -27,7 +27,7 @@ function ExerciseComponent() {
         if (step === 3) {
             setShowExerciseButton(true);
         } else if(step === 6) {
-            setShowResultsButton(true);
+            // setShowResultsButton(true);
         } else {
             setShowResultsButton(false);
             setShowExerciseButton(false);
@@ -135,7 +135,7 @@ function ExerciseComponent() {
         <h2 className='instructions-page-header'>Exercise Steps</h2>
         <div className="step-image">
           {step === 2 || step === 4 ? <img src={stepList[step-1].img} alt={`Hello ${step}`} /> : 
-          <video src={stepList[step-1].img} width="80%" height="325" controls />}
+          <video className="step-video" src={stepList[step-1].img} controls />}
                                 
         </div>
         <div className="step-text">
