@@ -1,4 +1,6 @@
 
+// import messages from './assets/messages.png';
+
 function ImageMessages() {
     return(
         <div className="sheep">

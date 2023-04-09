@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 
 
 import { useParams } from 'react-router-dom';
-// import messages from './assets/messages.png';
 
 import HamburgerMenu from '../shared/HamburgerMenu';
 import Ellipses from "../shared/Ellipses";
@@ -28,7 +27,7 @@ function Messages() {
 
       <HamburgerMenu />
 
-      <Header/>
+      <Header headerName={'Messages'}/>
 
       <ImageMessages/>
     </form>

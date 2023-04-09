@@ -33,11 +33,13 @@ function ButtonsForgotPassword() {
 
     return(
         <div className="buttons">
-        <button className="button-style" type="submit">
+        <button className="button-style-else" type="submit">
+        <a className="button-text" href="/log-in">
           Change Password
+          </a>
         </button>
 
-        <button className="button-style" type="submit">
+        <button className="button-style-else" type="submit">
           <a className="button-text" href="/log-in">
             Cancel
           </a>

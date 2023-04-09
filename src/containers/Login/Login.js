@@ -17,9 +17,9 @@ function Login() {
 
       <Ellipses/>
 
-      <Header/>
+      <Header headerName={'Sign-In'}/>
 
-      <TextLogin/>
+      {/* <TextLogin/> */}
     
       <LoginForm />
     </div>

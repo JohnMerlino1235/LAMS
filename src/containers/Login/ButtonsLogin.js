@@ -15,12 +15,12 @@ function ButtonsLogin() {
   </div>
 
   <div className="buttons-2nd-row">
-    <button className="button-style" onClick={() => navigate("/sign-up")}>
+    <button className="button-style-home" onClick={() => navigate("/sign-up")}>
     <a class="button-text">
         Sign-Up
       </a>
     </button>
-    <button className="button-style"  onClick={() => navigate("/forgot-password")}>
+    <button className="button-style-home"  onClick={() => navigate("/forgot-password")}>
       <a class="button-text">
         Forgot Password?
       </a>

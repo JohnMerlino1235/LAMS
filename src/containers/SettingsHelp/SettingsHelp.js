@@ -24,7 +24,7 @@ function SettingsHelp() {
 
       <HamburgerMenu />
 
-      <Header/>
+      <Header headerName={'Settings'}/>
 
     </form>
   );

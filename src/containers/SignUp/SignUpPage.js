@@ -14,7 +14,7 @@ function SignUpPage() {
     <div className="root-syle">
       <Ellipses/>
 
-      <Header/>
+      <Header headerName={'Sign-Up'}/>
 
       <SignUpForm />
     </div>
