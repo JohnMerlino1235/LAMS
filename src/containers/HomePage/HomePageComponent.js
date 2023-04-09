@@ -4,24 +4,30 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment/moment';
 
 const HomeScreen = () => {
-  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+  const days = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
 //   const completedDays = ['M', 'W', 'F']; // This could be an array of the days that have been completed
   const [completedDays, setCompletedDays] = useState([]);
+  const [startOfWeek, setStartOfWeek] = useState();
+  const [endOfWeek, setEndOfWeek] = useState();
 
   useEffect(() => {
     const today = new Date();
-    const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1)); // get the start of the week (Monday)
-    const endOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 7)); // get the end of the week (Sunday)
+    // Get the start of the current week (Monday)
+    const startOfWeek = moment().startOf('week').isoWeekday(1);
+
+    // Get the end of the current week (Sunday)
+    const endOfWeek = moment().endOf('week').isoWeekday(7);
     console.log('today', today);
     console.log('start', startOfWeek);
     console.log('end', endOfWeek);
+    console.log('wat', endOfWeek > startOfWeek)
     // filter the dates to only those that fall within the current week
-    // const currentWeekDates = data.filter(date => {
-    //     const dateObj = new Date(date);
-    //     return dateObj >= startOfWeek && dateObj <= endOfWeek;
-    // }); 
-    // setCompletedDays(currentWeekDays);   
-  }, []);
+    // Filter the dates to only include those in the current week
+    //     const currentWeekDates = data.filter((date) => {
+    //         const momentDate = moment(date);
+    //         return momentDate.isSameOrAfter(startOfWeek) && momentDate.isSameOrBefore(endOfWeek);
+    //       });
+    }, []);
   return (
     <div className="home-screen">
       <h1 className='instructions-page-header'>Welcome Back!</h1>
