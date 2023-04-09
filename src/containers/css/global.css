@@ -4,24 +4,24 @@
 
 .ellipse-blue {
     /* display: flex; */
-    width: 230px;
+    position: absolute;
+    width: 258px;
     height: 230px;
     left: -10px;
-    top: -127px;
+    top: -175px;
     border-radius: 50%;
-
     background: rgba(0, 148, 255, 0.25);
 }
 
 .ellipse-red {
     /* display: flex; */
-    width: 230px;
+    width: 258px;
     height: 230px;
-    left: -106px;
-    top: 84px;    
+    left: -125px;
+    top: 65px;    
     border-radius: 50%;
 
-    background: rgba(255, 0, 0, 0.25);
+    background: rgba(0, 76, 132, 0.46);
 }
 
 .ellipses {
@@ -104,7 +104,7 @@
 
 .button-text {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 18px;
 }
 
@@ -114,3 +114,140 @@
     align-items: center;
     text-align: center;
 }
+
+.instructions-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .step-image img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .step-text {
+    max-width: 90vw;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .step-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .prev-button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+
+  }
+
+  .next-button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 255px;
+  }
+
+  .instructions-page-header {
+    margin-top: 100px;
+  }
+
+  .step-number-text {
+    margin-top: 8.5px;
+    margin-left: 38.5%;
+  }
+
+  .progress-bar {
+    width: 90%;
+    height: 10px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #5999C7;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .buttons-instructions-page {
+    margin-top: 50px;
+    width: 203px;
+    height: 50px;
+
+    background: linear-gradient(90deg, rgba(0, 76, 132, 0.46) 6.72%, #5999C7 56.72%);
+    filter: drop-shadow(0px 4px 10px rgba(124, 194, 245, 0.55));
+    border-radius: 16px;
+  }
+
+  .button-text-instructions {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weekdays {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 24px;
+  }
+  
+  .weekday {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px;
+  }
+  
+  .weekday span {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .not-completed {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #333;
+  }
+  
+  .completed {
+    color: black;
+    font-size: 24px;
+  }
+
+.home-screen-exercise-text {
+    font-weight: 550;
+}
+  

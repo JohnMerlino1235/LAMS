@@ -4,14 +4,13 @@
 
 .ellipse-blue {
     /* display: flex; */
-    width: 230px;
-    height: 230px;
-    left: -10px;
-    top: -127px;
-    border-radius: 50%;
+position: absolute;
+width: 258px;
+height: 230px;
+left: -5px;
+top: -142px;
 
-    background: rgba(0, 148, 255, 0.25);
-}
+background: rgba(0, 148, 255, 0.25);}
 
 .ellipse-red {
     /* display: flex; */
@@ -142,17 +141,17 @@
 
 .button-style-home {
     position: inherit;
-    width: 180px;
-    height: 37.5px;
-    background: rgba(0, 148, 255, 0.25);
-    border-radius: 15px;
+    width: 280px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(0, 76, 132, 0.46) 6.72%, #5999C7 56.72%);    
+    border-radius: 16px;
     margin-right: 1%;
     margin-top: 10%;
 }
 
 .button-text {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 18px;
 }
 

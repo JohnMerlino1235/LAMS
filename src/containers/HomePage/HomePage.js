@@ -7,6 +7,7 @@ import Header from "../shared/Header";
 import TextHomePage from "./TextHomePage";
 import ButtonsHomePage from "./ButtonsHomePage";
 import Sheep from "../shared/sheep";
+import HomeScreen from "./HomePageComponent";
 
 
 function HomePage() {
@@ -18,7 +19,7 @@ function HomePage() {
 
       <HamburgerMenu />
       
-      <TextHomePage/>
+      <HomeScreen />
 
       <ButtonsHomePage/>
 

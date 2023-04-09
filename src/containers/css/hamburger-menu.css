@@ -39,8 +39,8 @@
  {
    display: block;
    position: absolute;
-   top: 4%;
-   right: 5%;
+   top: 2%;
+   right: 9%;
    
    z-index: 1;
    
@@ -76,7 +76,7 @@
    margin-bottom: 5px;
    position: relative;
    
-   background: #fd6464;
+   background: black;
    border-radius: 3px;
    
    z-index: 1;
@@ -140,14 +140,14 @@
    padding-top: 125px;
    right: -100px;
    
-   background: #fca9a9;
+   background: white;
    list-style-type: none;
    -webkit-font-smoothing: antialiased;
    /* to stop flickering of text in safari */
    
    transform-origin: 0% 0%;
    transform: translate(100%, 0);
-   
+  font-weight: bold;
    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
  }
  

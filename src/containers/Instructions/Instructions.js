@@ -3,6 +3,7 @@ import HamburgerMenu from '../shared/HamburgerMenu';
 import Ellipses from "../shared/Ellipses";
 import TextInstructions from './TextInstructions';
 import ButtonsInstructons from './ButtonsInstructions';
+import InstructionsPage from './InstructionsComponent';
 
 function Instructions() {
   
@@ -12,9 +13,7 @@ function Instructions() {
 
       <HamburgerMenu />
 
-      <TextInstructions/>
-
-      <ButtonsInstructons/>
+      <InstructionsPage />
 
     </div>
   );

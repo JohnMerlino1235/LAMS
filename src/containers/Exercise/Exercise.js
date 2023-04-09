@@ -6,6 +6,7 @@ import HamburgerMenu from '../shared/HamburgerMenu';
 import Ellipses from "../shared/Ellipses";
 import TextExercise from './TextExercise';
 import ButtonsExercise from './ButtonsExercise';
+import ExerciseComponent from './ExerciseComponent';
 
 
 function Exercise() {
@@ -17,10 +18,7 @@ function Exercise() {
 
       <HamburgerMenu />
 
-      <TextExercise/>
-
-      <ButtonsExercise/>
-     
+      <ExerciseComponent />     
     </div>
   );
 }
