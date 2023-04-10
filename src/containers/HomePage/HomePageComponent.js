@@ -6,17 +6,23 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const HomeScreen = () => {
-  const days = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
+  const days = ['Su', 'M', 'T', 'W', 'Th', 'F', 'S'];
   // const completedDays = ['M', 'W', 'F']; // This could be an array of the days that have been completed
   const [completedDays, setCompletedDays] = useState([]);
   const params = useParams();
 
+  const handleCompletedDates = (currentWeekDates) => {
+    let daysToUpdate = []
+    for (date in currentWeekDates) {
+      daysToUpdate.push(days[moment(date).day()])
+    }
+    setCompletedDays(daysToUpdate);
+  }
   useEffect(() => {
     axios.post("http://127.0.0.1:5000//get_exercise_data", {
       email: params.email,
     }).then((response) => {
       if (response.data.success) {
-        const today = new Date();
         // Get the start of the current week (Monday)
         const startOfWeek = moment().startOf('week').isoWeekday(1);
         // Get the end of the current week (Sunday)
@@ -27,7 +33,9 @@ const HomeScreen = () => {
             const momentDate = moment(date);
             return momentDate.isSameOrAfter(startOfWeek) && momentDate.isSameOrBefore(endOfWeek);
         });
-       console.log('currentWeekDates', currentWeekDates);
+        handleCompletedDates(currentWeekDates);
+        console.log('currentWeekDates', currentWeekDates);
+
       }
     }).catch((error) => {
       console.log('error', error);
