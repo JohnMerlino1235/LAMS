@@ -13,7 +13,7 @@ const HomeScreen = () => {
 
   const handleCompletedDates = (currentWeekDates) => {
     let daysToUpdate = []
-    for (date in currentWeekDates) {
+    for (let date in currentWeekDates) {
       daysToUpdate.push(days[moment(date).day()])
     }
     setCompletedDays(daysToUpdate);
