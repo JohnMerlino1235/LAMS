@@ -90,7 +90,7 @@ function InstructionsPage() {
         {text: "Place the sleeve on your leg", img: sleeve}, 
         {text: "Plug in sleeve to power bank", img: powerBank}, 
         {text: "Make sure USB is unplugged", img: unpluggedUSB}, 
-        {text: "Press Calibrate and plug in USB afterwards", img: pluggedInUSB}, 
+        {text: "Press Calibrate and then plug in USB", img: pluggedInUSB}, 
         {text: "Wait for success message", img: sleeve},
         {text: "Click Exercise button", img: sleeve},         
       ];

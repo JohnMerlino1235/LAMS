@@ -28,7 +28,7 @@ return (
             <a href={`/home-page/${params.email}`}><li>Home</li></a>
                 <a href={`/profile/${params.email}`}><li>Profile</li></a>
                 <a href={`/messages/${params.email}`}><li>Messages</li></a>
-                <a href={`/settings-help/${params.email}`}><li>Settings/Help</li></a>
+                <a href={`/settings-help/${params.email}`}><li>Settings</li></a>
                 <a href={`/about/${params.email}`}><li>About</li></a>
             </ul>
      </div>
