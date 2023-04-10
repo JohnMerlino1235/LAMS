@@ -7,7 +7,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import exercise from './exercise.mp4';
 import linkLight from './linkLight.jpg';
-import timer from './timer.gif';
+import stopWatchVideo from './stopWatchVideo.mp4';
+
 // import Step1 from './images/step1.png';
 // import Step2 from './images/step2.png';
 // import Step3 from './images/step3.png';
@@ -22,6 +23,7 @@ function ExerciseComponent() {
     const [comPort, setComport] = useState('');
     const params = useParams()
     const navigate = useNavigate();  
+    const [isRunning, setIsRunning] = useState(false);
 
     useEffect(() => {
         if (step === 3) {
@@ -42,6 +44,14 @@ function ExerciseComponent() {
       setStep(Math.min(step + 1, maxStep));
     }
 
+    const handleStart = () => {
+      setIsRunning(true);
+    };
+    
+    const handleStop = () => {
+      setIsRunning(false);
+    };
+  
     function handleStartExercise() {
         axios.post("http://127.0.0.1:5000//read_data", {
           com_port: params.comPort,
@@ -125,7 +135,7 @@ function ExerciseComponent() {
         {text: "Watch the above exercise", img: exercise}, 
         {text: "Wait for Link light to show up on sleeve", img: linkLight}, 
         {text: "Click Start Exercise button", img: exercise}, 
-        {text: "Begin Exercising for 30 seconds", img: timer}, 
+        {text: "Begin Exercising for 30 seconds", img: stopWatchVideo}, 
         {text: "Wait for success message", img: exercise},
         {text: "Click View Results button", img: exercise}]
   
@@ -134,8 +144,8 @@ function ExerciseComponent() {
       <div className="instructions-page">
         <h2 className='instructions-page-header'>Exercise Steps</h2>
         <div className="step-image">
-          {step === 2 || step === 4 ? <img src={stepList[step-1].img} alt={`Hello ${step}`} /> : 
-          <video className="step-video" src={stepList[step-1].img} controls />}
+          {step === 2 ? <img src={stepList[step-1].img} alt={`Hello ${step}`} /> : 
+          <video className="step-video" src={stepList[step-1].img} controls={false} autoPlay loop={step === 4 ? false : true}/>}
                                 
         </div>
         <div className="step-text">
