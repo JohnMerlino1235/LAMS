@@ -26,6 +26,14 @@ function SettingsHelp() {
 
       <Header headerName={'Settings'}/>
 
+      <div className="buttons">
+        <button className="button-style-else" type="submit">
+          <a className="button-text" href={`/forgot-password`}>
+            Change Password
+          </a>
+        </button>
+      </div>
+
     </form>
   );
 }
