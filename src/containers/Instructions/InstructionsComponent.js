@@ -93,7 +93,7 @@ function InstructionsPage() {
         {text: "Press Calibrate and plug in USB afterwards", img: pluggedInUSB}, 
         {text: "Wait for success message", img: sleeve},
         {text: "Click Exercise button", img: sleeve},         
-      ]
+      ];
   
     const progressBarFillWidth = `${(step / 6) * 100}%`;
 

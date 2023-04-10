@@ -18,6 +18,7 @@ const HomeScreen = () => {
     }
     setCompletedDays(daysToUpdate);
   }
+  
   useEffect(() => {
     axios.post("http://127.0.0.1:5000//get_exercise_data", {
       email: params.email,

@@ -20,39 +20,49 @@ function ExerciseComponent() {
     const maxStep = 6;
     const [showExerciseButton, setShowExerciseButton] = useState(false);
     const [showResultsButton, setShowResultsButton] = useState(false);
-    const [comPort, setComport] = useState('');
     const params = useParams()
     const navigate = useNavigate();  
-    const [isRunning, setIsRunning] = useState(false);
+    const [remainingTime, setRemainingTime] = useState(0);
+    console.log('remainingTime', remainingTime);
 
     useEffect(() => {
-        if (step === 3) {
-            setShowExerciseButton(true);
-        } else if(step === 6) {
-            // setShowResultsButton(true);
-        } else {
-            setShowResultsButton(false);
-            setShowExerciseButton(false);
-        }
-    }, [step]);
+      if (step === 3) {
+        setShowExerciseButton(true);
+      } else if(step === 6) {
+        setShowResultsButton(true);
+      } else {
+          setShowResultsButton(false);
+          setShowExerciseButton(false);
+      }
+      if (remainingTime > 0) {
+        const timerId = setTimeout(() => {
+          setRemainingTime(remainingTime - 1);
+        }, 1000);
+        return () => clearTimeout(timerId);
+      }
+    }, [step, remainingTime]);
 
     function handlePrevClick() {
       setStep(Math.max(step - 1, 1));
     }
   
     function handleNextClick() {
-      setStep(Math.min(step + 1, maxStep));
+      const nextStep = Math.min(step + 1, maxStep);
+      if (nextStep === 4) {
+        setRemainingTime(30);
+      }
+      if (step === 4 && remainingTime > 0) {
+        //do nothing
+        setShowExerciseButton(false);
+      } else {
+        setStep(Math.min(step + 1, maxStep));
+      }
     }
-
-    const handleStart = () => {
-      setIsRunning(true);
-    };
-    
-    const handleStop = () => {
-      setIsRunning(false);
-    };
   
     function handleStartExercise() {
+        setStep(Math.min(step + 1, maxStep));
+        setRemainingTime(30);
+        setShowExerciseButton(false);
         axios.post("http://127.0.0.1:5000//read_data", {
           com_port: params.comPort,
         }).then((response) => {
