@@ -52,7 +52,7 @@ function InputsForgotPassword() {
           type="oldPassword"
           onChange={formik.handleChange}
           value={formik.values.oldPassword}
-          placeholder="Old Password"
+          placeholder="New Password"
           required
         />
 
@@ -63,7 +63,7 @@ function InputsForgotPassword() {
           type="newPassword"
           onChange={formik.handleChange}
           value={formik.values.newPassword}
-          placeholder="New Password"
+          placeholder="New Password Again"
           required
         />
       </div>

@@ -273,3 +273,32 @@
 .home-screen-exercise-text {
   font-weight: 550;
 }
+
+.results-image {
+  height: 100px;
+  max-width: 50px;
+}
+
+.title-results {
+  margin-top: -35px;
+  text-align: center;
+}
+
+.button-style-results {
+  position: inherit;
+  width: 180px;
+  height: 37.5px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 76, 132, 0.46) 6.72%,
+    #5999c7 56.72%
+  );
+  filter: drop-shadow(0px 4px 10px rgba(124, 194, 245, 0.55));
+  border-radius: 15px;
+  margin-top: 150px;
+  margin-left: 26%;
+    text-decoration: none;
+  color: white;
+  font-size: 18px;
+
+}

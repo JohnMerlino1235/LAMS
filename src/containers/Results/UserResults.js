@@ -2,16 +2,19 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import results from './shaun.gentitlin@gmail.com.png';
+
 
 function UserResults() {
-  const params = useParams()
-  const [imageUrl, setImageUrl] = useState('');
-  const [showImageButton, setShowImageButton] = useState(false);
+  const params = useParams();
+  const [imageUrl, setImageUrl] = useState();
+  const [showImageButton, setShowImageButton] = useState(true);
 
   const getImagePicture = () => {
     axios.get(`http://127.0.0.1:5000//get_image/${params.email}`, { responseType: 'blob' })
       .then(response => {
         const imageUrl = URL.createObjectURL(response.data);
+        setShowImageButton(false);
         setImageUrl(imageUrl);
       })
       .catch(error => {
@@ -55,12 +58,9 @@ function UserResults() {
   }, [params.email])
 
   return(
-    //     <div className="buttons-home">
-    //         {imageUrl ? <img src={imageUrl} alt={imageUrl} /> : <h2 title='Loading'/> }
-    //   </div>
         <div>
-        {showImageButton && <button onClick={getImagePicture}>Get Image</button>}
-        {imageUrl && <img src={imageUrl} alt="image" />}
+        {showImageButton && <button className="button-style-results" onClick={getImagePicture}>View Results</button>}
+        {imageUrl && <img style={{width: 400, height: 300}}src={imageUrl} alt="image" />}
         </div>
 
     )
